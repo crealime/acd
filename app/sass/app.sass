@@ -322,11 +322,17 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__catalog
 		position: relative
 
+		@include media(1199)
+			width: 100%
+
 		&:hover
 			&>ul
 				visibility: visible
 				opacity: 1
 				transform: translateY(-40px)
+
+				@include media(1199)
+					transform: none
 
 		&>ul
 			position: absolute
@@ -337,6 +343,15 @@ button:hover, .button:hover, button:focus, .button:focus
 			visibility: hidden
 			opacity: 0
 			transition-duration: 300ms
+
+			@include media(1199)
+				position: relative
+				visibility: visible
+				opacity: 1
+				padding: 0
+				margin: 0
+				top: 0
+
 
 		&>ul>li
 			position: relative
@@ -362,17 +377,32 @@ button:hover, .button:hover, button:focus, .button:focus
 			margin-top: -1px
 			margin-right: -1px
 
+			@include media(1199)
+				display: flex
+				border-radius: 0
+				margin: 0
+				padding: 0 20px
+				height: 50px
+				align-items: center
+				font-size: 16px
+
 		&>ul>li>a
 			background: $sea
 			border: 1px solid $blue-light
 			color: $white
-			
+
+			@include media(1199)
+				border: none
+				border-bottom: 1px solid $blue-light
+
 			&:hover, &:focus, &:active
 				background: $accent
 				color: $sea
 
 		&>ul>li>ul
 			position: absolute
+			display: flex
+			flex-direction: column
 			top: 0
 			left: 100%
 			padding: 0
@@ -380,9 +410,20 @@ button:hover, .button:hover, button:focus, .button:focus
 			opacity: 0
 			transition-duration: 300ms
 
+			@include media(1199)
+				position: relative
+				visibility: visible
+				opacity: 1
+				top: 50px
+				left: -100%
+				align-items: stretch
+
 		&>ul>li>ul>li
 			display: flex
 			min-width: 300px
+
+			@include media(1199)
+				width: 100%
 
 		&>ul>li>ul>li>a
 			background: $gray-light
@@ -392,11 +433,18 @@ button:hover, .button:hover, button:focus, .button:focus
 			&:hover, &:focus, &:active
 				background: $accent
 
+			@include media(1199)
+				border: none
+				border-bottom: 1px solid $blue-light
+
 	&__catalog-button
 		padding: 6px 14px
 
 		@include media(1199)
-
+			height: 50px
+			border-radius: 0
+			padding: 0 20px
+			border-bottom: 1px solid $white
 
 		i
 			color: $white
