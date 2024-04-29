@@ -122,14 +122,13 @@ a
 
 button, .button
 	display: inline-block
-	padding: 16px 20px
+	padding: 10px 20px
 	background-color: $accent
 	color: $white
 	font-weight: 600
 	text-transform: uppercase
 	text-decoration: none
-	border: 2px solid $accent
-	border-radius: 10px
+	border-radius: 4px
 	cursor: pointer
 	font-size: 16px
 	line-height: 1
@@ -140,24 +139,16 @@ button, .button
 
 	&:disabled
 		background-color: $gray
-		border: 2px solid $gray
 		cursor: default
 
 		&:hover, &:focus
 			background-color: $gray
-			border: 2px solid $gray
 
 button:hover, .button:hover, button:focus, .button:focus
 	background-color: $sea
-	border: 2px solid $sea
 
 .button_mini
-	font-size: 14px
-	padding: 10px 16px
-	border: 1px solid $accent
-
-	&:hover, &:active
-		border: 1px solid $accent
+	padding: 6px 12px
 
 .small
 	font-size: 14px
@@ -223,6 +214,7 @@ button:hover, .button:hover, button:focus, .button:focus
 	z-index: 2
 
 .header
+	position: relative
 	background-color: $blue
 	padding: 20px 0
 	width: 100%
@@ -236,6 +228,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		display: flex
 		justify-content: space-between
 		align-items: center
+		gap: 30px
 
 	&__logo
 		width: 130px
@@ -254,12 +247,24 @@ button:hover, .button:hover, button:focus, .button:focus
 		padding-bottom: 20px
 		border-bottom: 1px solid $sea
 
+		@include media(1199)
+			border-bottom: none
+			padding-bottom: 0
+
 	&__infoblock
 		display: flex
 		flex-direction: column
 		flex: 1 1 auto
 		justify-content: space-between
 		gap: 4px
+
+		&_2
+			@include media(1199)
+				text-align: center
+
+		&_3
+			@include media(1199)
+				display: none
 
 	&__tel
 		font-size: 16px
@@ -289,12 +294,184 @@ button:hover, .button:hover, button:focus, .button:focus
 			color: $white
 
 	&__menu
+		display: flex
+		justify-content: space-between
+		gap: 16px
+		align-items: center
+		padding-top: 20px
+
+		@include media(1199)
+			position: absolute
+			top: 160px
+			left: 50%
+			width: 100%
+			max-width: 480px
+			transform: translateX(-50%)
+			background: rgba($black, .8)
+			flex-direction: column
+			justify-content: start
+			align-items: flex-start
+			padding: 0
+
+		.button
+			display: flex
+			align-items: center
+			gap: 10px
+			flex: 1 0 auto
+
+	&__catalog
+		position: relative
+
+		&:hover
+			&>ul
+				visibility: visible
+				opacity: 1
+				transform: translateY(-40px)
+
+		&>ul
+			position: absolute
+			display: flex
+			flex-direction: column
+			top: 60px
+			padding: 30px 0 0 0
+			visibility: hidden
+			opacity: 0
+			transition-duration: 300ms
+
+		&>ul>li
+			position: relative
+			display: flex
+			flex: 1
+			min-width: 230px
+
+			&:hover
+				&>ul
+					visibility: visible
+					width: auto
+					height: auto
+					opacity: 1
+
+		&>ul a
+			padding: 10px 16px
+			font-size: 14px
+			text-transform: uppercase
+			font-weight: 600
+			flex: 1 0 auto
+			width: 100%
+			border-radius: 4px
+			margin-top: -1px
+			margin-right: -1px
+
+		&>ul>li>a
+			background: $sea
+			border: 1px solid $blue-light
+			color: $white
+			
+			&:hover, &:focus, &:active
+				background: $accent
+				color: $sea
+
+		&>ul>li>ul
+			position: absolute
+			top: 0
+			left: 100%
+			padding: 0
+			visibility: hidden
+			opacity: 0
+			transition-duration: 300ms
+
+		&>ul>li>ul>li
+			display: flex
+			min-width: 300px
+
+		&>ul>li>ul>li>a
+			background: $gray-light
+			border: 1px solid $blue-light
+			color: $sea
+
+			&:hover, &:focus, &:active
+				background: $accent
+
+	&__catalog-button
+		padding: 6px 14px
+
+		@include media(1199)
+
+
 		i
 			color: $white
+			font-size: 24px
+			transition-duration: 300ms
 
+		&:hover, &:focus, &:active
+			background: $accent
+			color: $sea
 
+			i
+				color: $sea
+
+	&__top-menu
+		flex: 1 0 auto
+
+		ul
+			display: flex
+			gap: 16px
+			padding: 0
+
+		a
+			color: $white
+			font-weight: 600
+
+			&:hover, &:focus, &:active
+				color: $accent
+
+	&__search-form
+		position: relative
+
+	&__search-input
+		width: 116px
+		height: 36px
+		border-radius: 4px
+		border: none
+		padding: 0 10px
+
+	&__search-button
+		position: absolute
+		width: 36px
+		height: 36px
+		top: 0
+		right: 0
+		padding: 0
+		background: none
+		border: none
+		border-radius: 0 4px 4px 0
+		
+		&:hover, &:focus, &:active
+			i
+				color: $white
+
+		i
+			color: $sea
+			transition-duration: 300ms
+
+	&__login
+		padding: 10px 14px
+		background: $blue-light
+
+		&:hover, &:focus, &:active
+			color: $accent
+
+	&__cart
+		padding: 10px 14px
+		background: $sea
+
+		&:hover, &:focus, &:active
+			color: $accent
 
 	&__right
 		display: none
+
+		@include media(1199)
+			display: flex
 
 

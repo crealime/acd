@@ -20,7 +20,7 @@ header.header
 						a.header__link.callback(href="#callback") Зворотній дзвінок
 				.header__menu
 					nav.header__catalog
-						a.header__catalog-button(href="#")
+						a.button.header__catalog-button(href="#")
 							i.fa-solid.fa-grip
 							| Каталог
 						ul
@@ -418,7 +418,17 @@ header.header
 							li
 								a(href="#") Контакти
 					form.header__search-form(action="search" method="get")
-						input.header__search-input(type="text" placeholder="Пошук по сайту" name="search" id="search")
+						input.header__search-input(type="text" placeholder="Пошук..." name="search" id="search")
 						button.header__search-button
 							i.fa-solid.fa-magnifying-glass
+					a.button.header__login(href="#")
+						i.fa-solid.fa-user
+						| Увійти
+					a.button.header__cart(href="#")
+						i.fa-solid.fa-cart-shopping
+						| Кошик
+						| 0
+
 			.header__right
+
+
