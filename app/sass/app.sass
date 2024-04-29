@@ -1,0 +1,300 @@
+// @import "reset"
+@import "fonts"
+@import "vars"
+@import "mixins"
+
+*
+	box-sizing: border-box
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none
+	margin: 0
+	
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+
+input[type='number']
+	appearance: textfield
+	-moz-appearance: textfield
+
+input, textarea 
+	font-family: $font !important
+
+a:active, a:focus, input, textarea, input:active, textarea:active, input:focus, textarea:focus, button:active, button:focus
+	outline: none
+
+html
+	font-size: 16px
+	overflow-x: hidden
+	width: 100%
+	scroll-behavior: smooth
+
+body
+	position: relative
+	overflow-x: hidden
+	width: 100%
+	height: 100%
+	font-size: rem(16)
+	font-family: $font
+	font-weight: 400
+	line-height: 1.5
+	letter-spacing: .5px
+	color: $black
+
+	@include media(575)
+		font-size: rem(14)
+	
+.white
+	color: $white
+
+.h-100
+	height: 100%
+
+.d-none
+	display: none
+
+.d-flex
+	display: flex
+
+.d-block
+	display: block
+
+.d-iblock
+	display: inline-block
+
+.flex-row
+	flex-direction: row
+
+.flex-column
+	flex-direction: column
+
+.justify-content-between
+	justify-content: space-between
+
+.justify-content-center
+	justify-content: center
+
+.align-items-center
+	align-items: center
+
+.overflow-y-hidden
+	overflow-y: hidden
+
+.text-center
+	text-align: center
+
+.visible
+	visibility: visible
+
+.invisible
+	visibility: hidden
+	width: 0
+	height: 0
+
+h1, h2, h3, h4, h5, h6
+	text-transform: uppercase
+	font-weight: 700
+	line-height: 1.2
+	word-wrap: break-word !important
+
+h1
+	font-size: rem(48)
+	padding: em(20) 0 em(16)
+
+h2
+	font-size: rem(32)
+
+h3
+	font-size: rem(28)
+
+h4
+	font-style: rem(24)
+
+a
+	color: $sea
+	text-decoration: none
+	transition-duration: 300ms
+
+	&:hover, &:focus, &:active
+		color: $accent
+
+button, .button
+	display: inline-block
+	padding: 16px 20px
+	background-color: $accent
+	color: $white
+	font-weight: 600
+	text-transform: uppercase
+	text-decoration: none
+	border: 2px solid $accent
+	border-radius: 10px
+	cursor: pointer
+	font-size: 16px
+	line-height: 1
+	font-family: $font
+	text-align: center
+	transition-duration: 300ms
+	// flex: 0 0 auto
+
+	&:disabled
+		background-color: $gray
+		border: 2px solid $gray
+		cursor: default
+
+		&:hover, &:focus
+			background-color: $gray
+			border: 2px solid $gray
+
+button:hover, .button:hover, button:focus, .button:focus
+	background-color: $sea
+	border: 2px solid $sea
+
+.button_mini
+	font-size: 14px
+	padding: 10px 16px
+	border: 1px solid $accent
+
+	&:hover, &:active
+		border: 1px solid $accent
+
+.small
+	font-size: 14px
+	font-weight: 300
+
+.fw300
+	font-weight: 300
+
+.fw400
+	font-weight: 400
+
+.fw500
+	font-weight: 500
+
+.fw600
+	font-weight: 600
+
+.fw700
+	font-weight: 700
+
+.fw800
+	font-weight: 800
+
+.fw900
+	font-weight: 900
+
+
+.container
+	position: relative
+	width: 1140px
+	margin: 0 auto
+	padding: 0 20px
+
+	@include media(1199)
+		width: 100%
+
+	@include media(575)
+		padding: 0 10px
+
+.container-fluid
+	position: relative
+	width: 100%
+	margin: 0 auto
+	padding: 0 20px
+
+	@include media(575)
+		padding: 0 10px
+
+.wrapper
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.main
+	margin-top: 70px
+	flex: 1 0 auto
+
+.footer
+	position: relative
+	flex: 0 0 auto
+	padding: 40px 0
+	background-color: $blue
+	z-index: 2
+
+.header
+	background-color: $blue
+	padding: 20px 0
+	width: 100%
+	z-index: 9
+	color: $white
+
+	ul, li
+		list-style: none
+
+	&__box
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__logo
+		width: 130px
+
+	&__logo-img
+		width: 100%
+
+	&__center
+		display: flex
+		flex-direction: column
+
+	&__info
+		display: flex
+		justify-content: space-between
+		gap: 34px
+		padding-bottom: 20px
+		border-bottom: 1px solid $sea
+
+	&__infoblock
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
+		justify-content: space-between
+		gap: 4px
+
+	&__tel
+		font-size: 16px
+		color: $white
+
+	&__tel-0800
+		font-size: 20px
+		font-weight: 800
+		color: $accent
+
+		&:hover, &:focus, &:active
+			color: $white
+
+	&__tel-0800-text
+		font-size: 13px
+
+	&__address
+		font-size: 14px
+		color: $white
+
+	&__link
+		text-align: right
+		font-weight: 600
+		color: $accent
+
+		&:hover, &:focus, &:active
+			color: $white
+
+	&__menu
+		i
+			color: $white
+
+
+
+	&__right
+		display: none
+
+
