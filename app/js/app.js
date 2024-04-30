@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+	const html = document.documentElement
 	const body = document.querySelector('body')
 	const header = document.querySelector('.header')
 	const main = document.querySelector('.main')
@@ -27,26 +28,25 @@ window.addEventListener('load', function () {
 		headerBurgerOpen.classList.toggle('d-none')
 		headerBurgerClose.classList.toggle('d-none')
 		overlay.classList.toggle('overlay_visible')
-		body.classList.toggle('body-overflow-y-hidden')
-		// headerMenu.classList.toggle('overflow-y-scroll')
+		html.style.overflowY = html.style.overflowY !== 'hidden' ? 'hidden' : ''
 	}
 
-	headerBurger.addEventListener('click', function () {
+	headerBurger.addEventListener('click', () => {
 		expandMobileMenu()
 	})
 
-	overlay.addEventListener('click', function () {
+	overlay.addEventListener('click', () => {
 		expandMobileMenu()
 	})
 
 	// Expand ul in mobile menu
-	headerLiExpand.addEventListener('click', function() {
+	headerLiExpand.addEventListener('click', ()=> {
 		headerCatalog.classList.toggle('header__li-expanded')
 		headerCatalogArr.classList.toggle('header__arr-rotate')
 	});
 
 	// Expand li in mobile menu
-	headerUlLi.forEach(function(li) {
+	headerUlLi.forEach((li) => {
 		const link = li.querySelector('a')
 		const clone = headerLiExpand.cloneNode(true)
 		const arr = clone.querySelector('i')
