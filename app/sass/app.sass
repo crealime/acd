@@ -782,6 +782,11 @@ button:hover, .button:hover, button:focus, .button:focus
 	aspect-ratio: 110 / 50
 	border-radius: 4px
 	overflow: hidden
+	transition-duration: 300ms
+	box-shadow: 0 0 0 rgba($black, 0)
+
+	&:hover
+		box-shadow: 0 0 10px rgba($black, .8)
 
 	@include media(640)
 		margin: 30px 0
