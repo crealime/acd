@@ -53,7 +53,7 @@ body
 	height: 100%
 
 .d-none
-	display: none
+	display: none !important
 
 .d-flex
 	display: flex
@@ -233,6 +233,15 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__logo
 		width: 130px
 
+		@include media(1199)
+			width: 100px
+
+		@include media(860)
+			width: 70px
+
+		@include media(355)
+			width: 50px
+
 	&__logo-img
 		width: 100%
 
@@ -250,6 +259,10 @@ button:hover, .button:hover, button:focus, .button:focus
 		@include media(1199)
 			border-bottom: none
 			padding-bottom: 0
+
+		@include media(640)
+			flex-direction: column
+			gap: 6px
 
 	&__infoblock
 		display: flex
@@ -270,6 +283,15 @@ button:hover, .button:hover, button:focus, .button:focus
 		font-size: 16px
 		color: $white
 
+		@include media(640)
+			text-align: center
+
+		@include media(385)
+			font-size: 14px
+
+		@include media(355)
+			font-size: 12px
+
 	&__tel-0800
 		font-size: 20px
 		font-weight: 800
@@ -278,8 +300,20 @@ button:hover, .button:hover, button:focus, .button:focus
 		&:hover, &:focus, &:active
 			color: $white
 
+		@include media(640)
+			text-align: center
+
+		@include media(385)
+			font-size: 16px
+
+		@include media(355)
+			font-size: 14px
+
 	&__tel-0800-text
 		font-size: 13px
+
+		@include media(640)
+			display: none
 
 	&__address
 		font-size: 14px
@@ -293,6 +327,10 @@ button:hover, .button:hover, button:focus, .button:focus
 		&:hover, &:focus, &:active
 			color: $white
 
+		@include media(860)
+			display: none
+
+
 	&__menu
 		display: flex
 		justify-content: space-between
@@ -302,7 +340,7 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		@include media(1199)
 			position: absolute
-			top: 160px
+			top: 130px
 			left: 50%
 			width: 100%
 			max-width: 480px
@@ -312,6 +350,24 @@ button:hover, .button:hover, button:focus, .button:focus
 			justify-content: start
 			align-items: flex-start
 			padding: 0
+			visibility: hidden
+			opacity: 0
+			height: 0
+			overflow: hidden
+			transition-duration: 300ms
+			gap: 0
+
+		@include media(860)
+			top: 100px
+
+		@include media(640)
+			top: 118px
+
+		@include media(385)
+			top: 105px
+
+		@include media(355)
+			top: 96px
 
 		.button
 			display: flex
@@ -319,11 +375,18 @@ button:hover, .button:hover, button:focus, .button:focus
 			gap: 10px
 			flex: 1 0 auto
 
+	&__menu_visible
+		visibility: visible !important
+		opacity: 1 !important
+		height: auto !important
+
 	&__catalog
 		position: relative
 
 		@include media(1199)
 			width: 100%
+			height: 49px
+			overflow: hidden
 
 		&:hover
 			&>ul
@@ -356,33 +419,35 @@ button:hover, .button:hover, button:focus, .button:focus
 		&>ul>li
 			position: relative
 			display: flex
-			flex: 1
 			min-width: 230px
+			transition-duration: 300ms
 
 			&:hover
 				&>ul
 					visibility: visible
-					width: auto
-					height: auto
 					opacity: 1
+
+			@include media(1199)
+				width: 100%
+				flex-direction: column
+				height: 49px
+				overflow: hidden
+				transition-duration: 300ms
 
 		&>ul a
 			padding: 10px 16px
 			font-size: 14px
 			text-transform: uppercase
 			font-weight: 600
-			flex: 1 0 auto
 			width: 100%
 			border-radius: 4px
 			margin-top: -1px
 			margin-right: -1px
 
 			@include media(1199)
-				display: flex
 				border-radius: 0
 				margin: 0
-				padding: 0 20px
-				height: 50px
+				padding: 12px 20px
 				align-items: center
 				font-size: 16px
 
@@ -391,13 +456,14 @@ button:hover, .button:hover, button:focus, .button:focus
 			border: 1px solid $blue-light
 			color: $white
 
-			@include media(1199)
-				border: none
-				border-bottom: 1px solid $blue-light
-
 			&:hover, &:focus, &:active
 				background: $accent
 				color: $sea
+
+			@include media(1199)
+				width: 100%
+				border: none
+				border-bottom: 1px solid $blue-light
 
 		&>ul>li>ul
 			position: absolute
@@ -414,16 +480,18 @@ button:hover, .button:hover, button:focus, .button:focus
 				position: relative
 				visibility: visible
 				opacity: 1
-				top: 50px
-				left: -100%
+				left: 0
 				align-items: stretch
+				width: 100%
 
 		&>ul>li>ul>li
 			display: flex
 			min-width: 300px
 
 			@include media(1199)
+				flex: 1 1 auto
 				width: 100%
+				min-width: 0
 
 		&>ul>li>ul>li>a
 			background: $gray-light
@@ -436,14 +504,49 @@ button:hover, .button:hover, button:focus, .button:focus
 			@include media(1199)
 				border: none
 				border-bottom: 1px solid $blue-light
+				width: 100%
+				max-width: 480px
+
+		&>.header__li-expand
+			background: $accent
+			border-left: 1px solid $white
+			border-bottom: 1px solid $white
+
+			&:hover, &:focus, &:active
+				background: $sea
+
+	&__li-expand
+		position: absolute
+		width: 49px
+		height: 49px
+		background: $sea
+		border-left: 1px solid $blue-light
+		border-bottom: 1px solid $blue-light
+		display: flex
+		justify-content: center
+		align-items: center
+		top: 0
+		right: 0
+		cursor: pointer
+
+		&:hover, &:focus, &:active
+			background: $blue
+
+		@include mediam(1200)
+			display: none
+
+	&__li-expanded
+		height: auto !important
+
+	&__arr-rotate
+		transform: rotate(90deg)
 
 	&__catalog-button
 		padding: 6px 14px
 
 		@include media(1199)
-			height: 50px
 			border-radius: 0
-			padding: 0 20px
+			padding: 12px 20px
 			border-bottom: 1px solid $white
 
 		i
@@ -461,10 +564,20 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__top-menu
 		flex: 1 0 auto
 
+		@include media(1199)
+			order: 1
+			width: 100%
+
 		ul
 			display: flex
 			gap: 16px
 			padding: 0
+
+			@include media(1199)
+				flex-direction: column
+				gap: 0
+				width: 100%
+				margin: 0
 
 		a
 			color: $white
@@ -473,8 +586,23 @@ button:hover, .button:hover, button:focus, .button:focus
 			&:hover, &:focus, &:active
 				color: $accent
 
+			@include media(1199)
+				display: flex
+				justify-content: start
+				align-items: center
+				background: $blue
+				width: 100%
+				height: 49px
+				padding-left: 20px
+				border-bottom: 1px solid $blue-light
+				font-size: 16px
+				text-transform: uppercase
+
 	&__search-form
 		position: relative
+
+		@include media(1199)
+			width: 100%
 
 	&__search-input
 		width: 116px
@@ -482,6 +610,14 @@ button:hover, .button:hover, button:focus, .button:focus
 		border-radius: 4px
 		border: none
 		padding: 0 10px
+		background: $gray-light
+
+		@include media(1199)
+			width: 100%
+			border-radius: 0
+			height: 50px
+			padding: 0 20px
+			border-bottom: 1px solid $blue-extra-light
 
 	&__search-button
 		position: absolute
@@ -490,7 +626,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		top: 0
 		right: 0
 		padding: 0
-		background: none
+		background: $gray-light
 		border: none
 		border-radius: 0 4px 4px 0
 		
@@ -502,12 +638,27 @@ button:hover, .button:hover, button:focus, .button:focus
 			color: $sea
 			transition-duration: 300ms
 
+		@include media(1199)
+			width: 49px
+			height: 49px
+			font-size: 20px
+			border-radius: 0
+			border-left: 1px solid $sea
+
 	&__login
 		padding: 10px 14px
 		background: $blue-light
 
 		&:hover, &:focus, &:active
 			color: $accent
+			background: $blue-light
+
+		@include media(1199)
+			width: 100%
+			height: 49px
+			padding-left: 20px
+			border-bottom: 1px solid $blue-extra-light
+			border-radius: 0
 
 	&__cart
 		padding: 10px 14px
@@ -516,10 +667,32 @@ button:hover, .button:hover, button:focus, .button:focus
 		&:hover, &:focus, &:active
 			color: $accent
 
+		@include media(1199)
+			width: 100%
+			height: 49px
+			padding-left: 20px
+			border-bottom: 1px solid $blue-extra-light
+			border-radius: 0
+
 	&__right
 		display: none
 
 		@include media(1199)
 			display: flex
 
+	&__burger
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40px
+		height: 40px
+		border-radius: 4px
+		background: $blue-light
+		color: $white
+		font-size: 24px
+		cursor: pointer
 
+		@include media(355)
+			width: 30px
+			height: 30px
+			font-size: 18px
