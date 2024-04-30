@@ -43,6 +43,9 @@ body
 	letter-spacing: .5px
 	color: $black
 
+	@include mediam(1200)
+		overflow-y: auto !important
+
 	@include media(575)
 		font-size: rem(14)
 	
@@ -80,7 +83,10 @@ body
 	align-items: center
 
 .overflow-y-hidden
-	overflow-y: hidden
+	overflow-y: hidden !important
+
+.overflow-y-scroll
+	overflow-y: scroll
 
 .text-center
 	text-align: center
@@ -175,6 +181,9 @@ button:hover, .button:hover, button:focus, .button:focus
 .fw900
 	font-weight: 900
 
+.body-overflow-y-hidden
+	overflow-y: hidden
+	height: 100vh
 
 .container
 	position: relative
@@ -203,8 +212,12 @@ button:hover, .button:hover, button:focus, .button:focus
 	min-height: 100vh
 
 .main
-	margin-top: 70px
+	position: relative
 	flex: 1 0 auto
+	z-index: 1
+
+	@include mediam(1200)
+		margin-top: 0 !important
 
 .footer
 	position: relative
@@ -220,6 +233,12 @@ button:hover, .button:hover, button:focus, .button:focus
 	width: 100%
 	z-index: 9
 	color: $white
+
+	@include media(1199)
+		padding: 10px 0
+		position: fixed
+		top: 0
+		left: 0
 
 	ul, li
 		list-style: none
@@ -330,6 +349,42 @@ button:hover, .button:hover, button:focus, .button:focus
 		@include media(860)
 			display: none
 
+	&__menu-box
+
+		&::-webkit-scrollbar
+			display: none
+
+		@include media(1199)
+			position: absolute
+			top: 120px
+			left: 50%
+			transform: translateX(-50%)
+			width: 100%
+			max-width: 480px
+			overflow-y: auto
+			visibility: hidden
+			opacity: 0
+			height: 0
+
+		@include media(860)
+			top: 90px
+
+		@include media(640)
+			top: 108px
+
+		@include media(385)
+			top: 95px
+
+		@include media(355)
+			top: 86px
+
+		@include mediam(1200)
+			height: auto !important
+
+	&__menu-box_visible
+		visibility: visible !important
+		opacity: 1 !important
+		height: 80vh !important
 
 	&__menu
 		display: flex
@@ -339,35 +394,21 @@ button:hover, .button:hover, button:focus, .button:focus
 		padding-top: 20px
 
 		@include media(1199)
-			position: absolute
-			top: 130px
-			left: 50%
+			position: relative
+			top: 0
+			left: 0
 			width: 100%
 			max-width: 480px
-			transform: translateX(-50%)
-			background: rgba($black, .8)
 			flex-direction: column
 			justify-content: start
 			align-items: flex-start
 			padding: 0
-			visibility: hidden
-			opacity: 0
-			height: 0
+			//visibility: hidden
+			//opacity: 0
+			//height: 0
 			overflow: hidden
-			transition-duration: 300ms
+			transition-duration: 500ms
 			gap: 0
-
-		@include media(860)
-			top: 100px
-
-		@include media(640)
-			top: 118px
-
-		@include media(385)
-			top: 105px
-
-		@include media(355)
-			top: 96px
 
 		.button
 			display: flex
@@ -394,6 +435,7 @@ button:hover, .button:hover, button:focus, .button:focus
 				opacity: 1
 				transform: translateY(-40px)
 
+
 				@include media(1199)
 					transform: none
 
@@ -402,10 +444,23 @@ button:hover, .button:hover, button:focus, .button:focus
 			display: flex
 			flex-direction: column
 			top: 60px
-			padding: 30px 0 0 0
+			padding: 0
+			margin-top: 47px
 			visibility: hidden
 			opacity: 0
 			transition-duration: 300ms
+			z-index: 1
+
+			&:before
+				content: ''
+				position: absolute
+				width: 100%
+				height: 30px
+				top: -30px
+				z-index: 0
+
+				@include media(1199)
+					display: none
 
 			@include media(1199)
 				position: relative
@@ -417,7 +472,7 @@ button:hover, .button:hover, button:focus, .button:focus
 
 
 		&>ul>li
-			position: relative
+			//position: relative
 			display: flex
 			min-width: 230px
 			transition-duration: 300ms
@@ -428,6 +483,7 @@ button:hover, .button:hover, button:focus, .button:focus
 					opacity: 1
 
 			@include media(1199)
+				position: relative
 				width: 100%
 				flex-direction: column
 				height: 49px
@@ -475,6 +531,9 @@ button:hover, .button:hover, button:focus, .button:focus
 			visibility: hidden
 			opacity: 0
 			transition-duration: 300ms
+			height: 100%
+			background: rgba($white, .8)
+			border-radius: 4px
 
 			@include media(1199)
 				position: relative
@@ -483,6 +542,9 @@ button:hover, .button:hover, button:focus, .button:focus
 				left: 0
 				align-items: stretch
 				width: 100%
+				height: auto
+				background: none
+				border-radius: 0
 
 		&>ul>li>ul>li
 			display: flex
@@ -527,6 +589,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		align-items: center
 		top: 0
 		right: 0
+		font-size: 20px
 		cursor: pointer
 
 		&:hover, &:focus, &:active
@@ -592,8 +655,7 @@ button:hover, .button:hover, button:focus, .button:focus
 				align-items: center
 				background: $blue
 				width: 100%
-				height: 49px
-				padding-left: 20px
+				padding: 12px 20px
 				border-bottom: 1px solid $blue-light
 				font-size: 16px
 				text-transform: uppercase
@@ -655,8 +717,7 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		@include media(1199)
 			width: 100%
-			height: 49px
-			padding-left: 20px
+			padding: 16px 20px
 			border-bottom: 1px solid $blue-extra-light
 			border-radius: 0
 
@@ -669,8 +730,7 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		@include media(1199)
 			width: 100%
-			height: 49px
-			padding-left: 20px
+			padding: 16px 20px
 			border-bottom: 1px solid $blue-extra-light
 			border-radius: 0
 
@@ -696,3 +756,73 @@ button:hover, .button:hover, button:focus, .button:focus
 			width: 30px
 			height: 30px
 			font-size: 18px
+
+.overlay
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	background: rgba($white, .8)
+	z-index: 5
+	opacity: 0
+	visibility: hidden
+	transition-duration: 300ms
+
+	@include mediam(1200)
+		display: none !important
+
+	&_visible
+		visibility: visible
+		opacity: 1
+
+.swiper
+	position: relative
+	margin: 50px 0
+	aspect-ratio: 110 / 50
+	border-radius: 4px
+	overflow: hidden
+
+	@include media(640)
+		margin: 30px 0
+
+	@include media(480)
+		margin: 20px 0
+
+	&__button
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		color: $accent
+		font-size: 80px
+		z-index: 5
+		cursor: pointer
+		transition-duration: 300ms
+
+		&:hover, &:focus, &:active
+			color: $sea
+
+		@include media(860)
+			font-size: 50px
+
+		&_next
+			left: 20px
+
+			@include media(575)
+				left: 10px
+
+		&_prev
+			right: 20px
+
+			@include media(575)
+				right: 10px
+
+	a
+		display: block
+		width: 100%
+		height: 100%
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
