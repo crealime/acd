@@ -119,6 +119,7 @@ function pugToHtml() {
 function libsjs() {
 	return src([
 		'node_modules/swiper/swiper-bundle.min.js',
+		'node_modules/sweetalert2/dist/sweetalert2.all.min.js'
 	])
 		.pipe(concat('libs.min.js'))
 		.pipe(dest('app/js'))
@@ -129,7 +130,8 @@ function libsjs() {
 function libscss() {
 	return src([
 		'node_modules/normalize.css/normalize.css',
-		'node_modules/swiper/swiper-bundle.min.css'
+		'node_modules/swiper/swiper-bundle.min.css',
+		'node_modules/sweetalert2/dist/sweetalert2.min.css'
 	])
 		.pipe(concat('libs.min.css'))
 		.pipe(postCss([

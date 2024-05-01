@@ -41,6 +41,7 @@
 		"normalize.css": "^8.0.1",
 		"postcss": "^8.4.31",
 		"sass": "^1.69.5",
+		"sweetalert2": "^11.10.8",
 		"swiper": "^11.0.4",
 		"terser-webpack-plugin": "^5.3.9",
 		"webpack": "^5.89.0",
