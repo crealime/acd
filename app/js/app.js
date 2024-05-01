@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
 	const warning = document.querySelector('.warning')
 	const warningClose = document.querySelector('.warning__close')
 	const warningLink = document.querySelector('.warning__link')
+	const scrollup = document.querySelector('.scrollup')
 
 	// Change main margin-top
 	function changeMainMarginTop() {
@@ -353,12 +354,33 @@ rgba(0,0,0,0.9)`,
 		hideWarning()
 	})
 
-	// Swal.fire({
-	// 	title: 'Error!',
-	// 	text: 'Do you want to continue',
-	// 	icon: 'error',
-	// 	confirmButtonText: 'Cool'
-	// })
+	scrollup.addEventListener('click', function () {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
+	})
+
+	document.addEventListener('scroll', () => {
+		getScrollHeight()
+	})
+
+	getScrollHeight()
+
+	function getScrollHeight() {
+		const topScroll = window.scrollY || document.documentElement.scrollTop
+		if (scrollup.classList.contains('d-none') && topScroll > 1000) {
+			scrollup.classList.remove('d-none')
+			setTimeout(() => {
+				scrollup.classList.remove('scrollup_hide')
+			}, 100)
+		} else if (!scrollup.classList.contains('d-none') && topScroll < 700) {
+			scrollup.classList.add('scrollup_hide')
+			setTimeout(() => {
+				scrollup.classList.add('d-none')
+			}, 300)
+		}
+	}
 })
 
 

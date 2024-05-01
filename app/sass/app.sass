@@ -250,9 +250,63 @@ button:hover, .button:hover, button:focus, .button:focus
 .footer
 	position: relative
 	flex: 0 0 auto
-	padding: 40px 0
+	padding: 40px 0 20px
 	background-color: $blue
+	color: $white
 	z-index: 2
+
+	ul
+		padding: 0
+
+	li
+		list-style: none
+		margin-bottom: 5px
+
+	ul>li>a
+		color: $white
+		padding: 5px 0
+		
+		&:hover, &:focus, &:active
+			color: $accent
+
+	.header__tel
+		display: inline-block
+		margin-bottom: 5px
+
+	.header__tel-0800-text
+		display: block !important
+
+	&__box
+		display: flex
+		justify-content: space-between
+		align-items: start
+		gap: 20px
+		flex-wrap: wrap
+
+		@include media(575)
+			gap: 10px
+
+	&__item
+		flex: 1 0 0
+		min-width: 200px
+
+	&__title
+		font-size: rem(18)
+		font-weight: 600
+
+	&__infoblock
+		margin: 15px 0 20px
+
+	&__social
+		font-size: 24px
+		margin-top: 16px
+
+		a
+			margin-right: 20px
+			color: $accent
+
+			&:hover, &:focus, &:active
+				color: $white
 
 .header
 	position: relative
@@ -1321,3 +1375,30 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .home-text
 	padding: rem(30) 0
+
+.scrollup
+	display: flex
+	justify-content: center
+	align-items: center
+	position: fixed
+	bottom: 10px
+	right: 10px
+	border-radius: 10px
+	cursor: pointer
+	opacity: .5
+	transition-duration: 500ms
+	z-index: 21
+	font-size: 50px
+	color: $accent
+
+	&:hover
+		opacity: 1
+
+	&_show
+		opacity: .5
+
+	&_hide
+		opacity: 0
+
+
+
