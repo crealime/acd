@@ -21,6 +21,9 @@ input[type='number']
 
 input, textarea 
 	font-family: $font !important
+	background: $gray-light
+	border: none
+	border-radius: $br1
 
 a:active, a:focus, input, textarea, input:active, textarea:active, input:focus, textarea:focus, button:active, button:focus
 	outline: none
@@ -41,7 +44,7 @@ body
 	font-weight: 400
 	line-height: 1.5
 	letter-spacing: .5px
-	color: $black
+	color: $blue
 
 	@include mediam(1200)
 		//overflow-y: auto !important
@@ -51,6 +54,9 @@ body
 	
 .white
 	color: $white
+
+.ttu
+	text-transform: uppercase
 
 .h-100
 	height: 100%
@@ -144,7 +150,7 @@ button, .button
 	font-weight: 600
 	text-transform: uppercase
 	text-decoration: none
-	border-radius: 4px
+	border-radius: $br1
 	border: none
 	cursor: pointer
 	font-size: 16px
@@ -165,7 +171,7 @@ button:hover, .button:hover, button:focus, .button:focus
 	background-color: $sea
 
 .button_mini
-	padding: 6px 12px
+	padding: 10px 14px
 
 .button_big
 	font-size: 20px
@@ -175,7 +181,8 @@ button:hover, .button:hover, button:focus, .button:focus
 	background: $sea
 	
 	&:hover, &:focus, &:active
-		background: $sea
+		background: $accent
+		color: $white
 
 .small
 	font-size: 14px
@@ -472,7 +479,7 @@ button:hover, .button:hover, button:focus, .button:focus
 			transition-duration: 300ms
 			z-index: 1
 
-			&:before
+			&::before
 				content: ''
 				position: absolute
 				width: 100%
@@ -517,7 +524,7 @@ button:hover, .button:hover, button:focus, .button:focus
 			text-transform: uppercase
 			font-weight: 600
 			width: 100%
-			border-radius: 4px
+			border-radius: $br1
 			margin-top: -1px
 			margin-right: -1px
 
@@ -554,7 +561,7 @@ button:hover, .button:hover, button:focus, .button:focus
 			transition-duration: 300ms
 			height: 100%
 			background: rgba($white, .8)
-			border-radius: 4px
+			border-radius: $br1
 
 			@include media(1199)
 				position: relative
@@ -690,7 +697,7 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__search-input
 		width: 116px
 		height: 36px
-		border-radius: 4px
+		border-radius: $br1
 		border: none
 		padding: 0 10px
 		background: $gray-light
@@ -767,7 +774,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		align-items: center
 		width: 40px
 		height: 40px
-		border-radius: 4px
+		border-radius: $br1
 		background: $blue-light
 		color: $white
 		font-size: 24px
@@ -801,7 +808,7 @@ button:hover, .button:hover, button:focus, .button:focus
 	position: relative
 	margin: 50px 0 10px
 	aspect-ratio: 110 / 50
-	border-radius: 4px
+	border-radius: $br2
 	overflow: hidden
 	transition-duration: 300ms
 	box-shadow: $bsh-none
@@ -884,6 +891,10 @@ button:hover, .button:hover, button:focus, .button:focus
 		cursor: pointer
 		color: $white
 		font-size: 30px
+		transition-duration: 300ms
+
+		&:hover, &:focus, &:active
+			transform: rotate(90deg)
 
 	&__heading
 		margin-bottom: rem(30)
@@ -902,7 +913,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		border: 1px solid $gray-light
 		background: none
 		color: $gray-light
-		border-radius: 4px
+		border-radius: $br1
 
 	&__textarea
 		width: 100%
@@ -915,7 +926,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		color: $gray-light
 		font-family: $font
 		padding-top: rem(10)
-		border-radius: 4px
+		border-radius: $br1
 
 	&__button
 		font-size: rem(18)
@@ -984,7 +995,7 @@ button:hover, .button:hover, button:focus, .button:focus
 .categories
 
 	&_home
-		margin: rem(50) 0
+		margin: rem(60) 0
 
 	h2
 		margin-bottom: rem(40)
@@ -994,7 +1005,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		aspect-ratio: 1 / 1
 		background: #000
 		line-height: 0
-		border-radius: 4px
+		border-radius: $br2
 		overflow: hidden
 		box-shadow: $bsh-none
 
@@ -1035,6 +1046,11 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__link
 		margin-top: rem(40)
 
+.grid-3
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr))
+	gap: 20px
+
 .grid-4
 	display: grid
 	grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr))
@@ -1049,23 +1065,30 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .home-banner
 	background: $blue-extra-light
-	padding: rem(40) 0
 
 	&__box
 		display: flex
 		justify-content: space-between
 		align-items: center
-		gap: 20px
+		gap: 40px
 		flex-wrap: wrap
+		padding: 40px 0
+
+		@include media(800)
+			gap: 30px
 
 	&__left
 		display: flex
 		flex-direction: column
 		justify-content: space-between
 		align-items: start
-		flex: 1 0 min-content
+		flex: 1 1 min-content
 		color: $white
 		gap: 10px
+
+		@include media(800)
+			text-align: center
+			align-items: center
 
 	&__h2
 		font-size: 40px
@@ -1074,24 +1097,227 @@ button:hover, .button:hover, button:focus, .button:focus
 		margin: 0
 		color: $white
 
+		@include media(450)
+			font-size: 30px
+
 	&__center
 		width: 200px
 		height: 200px
 		flex: 1 0 auto
 
+		@include media(1100)
+			display: none
+
 	&__img
 		width: 100%
 		height: 100%
-		aspect-ratio: 1 / 1
 		object-fit: cover
+		opacity: .5
+		filter: grayscale(1)
 
 	&__right
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
 		text-align: right
 		width: 100%
 		max-width: 300px
+		flex: 1 1 auto
+
+		@include media(800)
+			width: 100%
+			max-width: 100%
+			text-align: center
 
 	&__input
 		width: 100%
+		height: 44px
+		border: none
+		border-radius: $br1
+		text-align: center
+		margin-bottom: 20px
+		background: $gray-light
 
 	&__button
 		width: 100%
+
+.products
+
+	h2
+		margin-bottom: rem(30)
+
+	&_home
+		margin: rem(60) 0
+
+	&__item
+		border-radius: $br2
+		border: 1px solid $blue-extra-light
+		box-shadow: $bsh-none
+		overflow: hidden
+		transition-duration: 300ms
+		padding-bottom: 20px
+
+		&:hover, &:focus, &:active
+			box-shadow: $bsh-hover
+
+			.products__img
+				transform: scale(1.1)
+
+	&__img-box
+		display: block
+		width: 100%
+		aspect-ratio: 1 / 1
+		overflow: hidden
+
+	&__img
+		width: 100%
+		height: 100%
+		object-fit: contain
+		transition-duration: 300ms
+		
+	&__h3
+		margin: 20px 0
+		padding: 0 20px
+		line-height: .8
+
+		@include media(575)
+			margin-top: 10px
+			padding: 0 15px
+
+	&__h3-link
+		font-size: 14px
+		font-weight: 600
+		color: $blue
+		transition-duration: 300ms
+
+		&:hover, &:focus, &:active
+			color: $accent
+
+	&__article, &__instock
+		padding: 0 20px
+		font-size: 12px
+		margin-bottom: 5px
+
+		@include media(575)
+			padding: 0 15px
+
+	&__cost
+		padding: 0 20px
+		font-size: 24px
+		font-weight: 600
+		color: $blue
+		margin: 15px 0
+
+		@include media(575)
+			padding: 0 15px
+
+	&__currency
+		margin-left: 10px
+
+	&__button
+		margin-left: 20px
+
+		@include media(575)
+			margin-left: 15px
+
+		i
+			margin-left: 10px
+
+.benefits
+
+	&__box
+		counter-reset: itemCounter
+		margin: 100px 0 20px
+
+	&__item
+		position: relative
+		padding: 30px
+		background: $accent
+		border-radius: $br2
+		margin-bottom: rem(60)
+
+		@include media(575)
+			padding: 20px
+
+		&::before
+			position: absolute
+			top: -95px
+			right: 20px
+			counter-increment: itemCounter
+			content: counter(itemCounter, decimal-leading-zero)
+			font-size: 90px
+			font-weight: 900
+			color: $accent
+
+	&__title
+		font-size: rem(20)
+		font-weight: 600
+		color: $blue
+		text-transform: uppercase
+		line-height: 1.4
+		margin-bottom: rem(10)
+
+	&__text
+		font-size: rem(16)
+		color: $gray
+
+.questions
+	position: relative
+	background-size: cover
+	background-position: left center
+	padding: rem(60) 0
+	text-align: center
+
+	h2
+		margin: 0 0 rem(10)
+
+	&__darken
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba($sea, .8)
+	
+	&__box
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 20px
+		width: 100%
+		max-width: 480px
+		margin: rem(30) auto 0
+
+	&__input
+		width: 100%
+		height: 44px
+		text-align: center
+		padding: 0 rem(20)
+
+	&__textarea
+		width: 100%
+		height: 100px
+		text-align: center
+		padding: rem(15) rem(20)
+
+	&__button
+		width: 100%
+
+
+	&__man
+		position: absolute
+		bottom: 0
+		left: calc(50% + 250px)
+		transform: translateX(-30px)
+		height: calc(100% + 20px)
+		aspect-ratio: .653 / 1
+		background-size: cover
+		background-position: center center
+
+		@include media(900)
+			display: none
+
+.home-text
+	padding: rem(30) 0

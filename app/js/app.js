@@ -38,6 +38,8 @@ window.addEventListener('load', function () {
 		html.style.overflowY = html.style.overflowY !== 'hidden' ? 'hidden' : 'auto'
 	}
 
+	window.addEventListener('resize', () => html.style.overflowY = 'auto')
+
 	headerBurger.addEventListener('click', () => {
 		expandMobileMenu()
 	})
@@ -184,7 +186,7 @@ window.addEventListener('load', function () {
 
 	function sendForm() {
 		formAjax.forEach(item => {
-			item.onsubmit = function (e) {
+			item.addEventListener('submit', function (e) {
 				e.preventDefault()
 				const that = this
 				const formDate = serialize(this)
@@ -201,7 +203,11 @@ window.addEventListener('load', function () {
 							icon: "success",
 							title: formDate.сool,
 							text: formDate.сool_message,
-							timer: 5000
+							backdrop: `
+rgba(0,0,0,0.9)`,
+							timer: 7000,
+							didOpen: () => html.style.overflowY = 'hidden',
+							didClose: () => html.style.overflowY = 'auto'
 						});
 
 						const action = that.querySelector('.popup').id
@@ -231,11 +237,15 @@ window.addEventListener('load', function () {
 								icon: "error",
 								title: formDate.bad,
 								text: formDate.bad_message,
-								timer: 10000
+								backdrop: `
+rgba(0,0,0,0.9)`,
+								timer: 7000,
+								didOpen: () => html.style.overflowY = 'hidden',
+								didClose: () => html.style.overflowY = 'auto'
 							})
 						}
 					)
-			}
+			})
 		})
 	}
 	sendForm()
