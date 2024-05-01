@@ -992,14 +992,18 @@ button:hover, .button:hover, button:focus, .button:focus
 		
 .warning
 	position: fixed
-	left: 0
+	left: 50%
 	bottom: 0
+	transform: translateX(-50%)
 	width: 100%
+	max-width: 760px
 	z-index: 8
 	text-align: center
 	pointer-events: none
 	opacity: 0
 	transition-duration: .5s
+	border-radius: 4px 4px 0 0
+	overflow: hidden
 
 	&__back
 		position: relative
@@ -1009,7 +1013,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		color: $white
 		font-weight: 600
 		transition-duration: 300ms
-		padding: rem(12) rem(36) rem(12) rem(20)
+		padding: rem(14) rem(36) rem(12) rem(10)
 		pointer-events: auto
 
 		&:hover,&:focus
