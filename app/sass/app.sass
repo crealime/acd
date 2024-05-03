@@ -1452,8 +1452,11 @@ button:hover, .button:hover, button:focus, .button:focus
 
 	&__box
 		display: grid
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
 		gap: 20px
+
+		@include media(360)
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
 
 	&__left
 		margin-bottom: rem(20)
