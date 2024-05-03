@@ -382,20 +382,6 @@ rgba(0,0,0,0.9)`,
 		}
 	}
 
-	removePreloader()
-
 })
-
-setTimeout(removePreloader, 5000)
-
-function removePreloader() {
-	const preloader = document.querySelector('.preloader')
-	preloader.style.opacity = '0'
-	preloader.addEventListener('transitionend', function handler() {
-		preloader.style.display = 'none'
-		preloader.removeEventListener('transitionend', handler)
-	})
-}
-
 
 
