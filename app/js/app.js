@@ -72,14 +72,35 @@ window.addEventListener('load', function () {
 	});
 
 	// Slider
-	const swiper = new Swiper('.swiper', {
-		loop: true,
-		// autoHeight: true,
-		navigation: {
-			nextEl: '.swiper__button_next',
-			prevEl: '.swiper__button_prev',
-		}
-	})
+	if (document.querySelector('.swiper-home')) {
+		const swiper = new Swiper('.swiper-home', {
+			loop: true,
+			// autoHeight: true,
+			navigation: {
+				nextEl: '.swiper-home__button_next',
+				prevEl: '.swiper-home__button_prev',
+			}
+		})
+	}
+
+	// Slider on product page
+	if (document.querySelector('.product__swiper-thumbs')) {
+		const swiperProductThumbs = new Swiper('.product__swiper-thumbs', {
+			loop: true,
+			spaceBetween: 20,
+			slidesPerView: 3,
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+
+		const swiperProduct = new Swiper('.product__swiper', {
+			loop: true,
+			spaceBetween: 20,
+			thumbs: {
+				swiper: swiperProductThumbs,
+			},
+		});
+	}
 
 	// Show/hide popup
 

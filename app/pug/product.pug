@@ -1,8 +1,42 @@
 extends includes/_template
 
 block title
-	| АвтоСітіДніпро
+	| Кронштейн генератора Євро 2,3 для КамАЗ
 
 block main
 	main.main
-		.container
+		.breadcrumbs
+			nav
+				ul
+					li
+						a(href="#") Головна
+					li
+						a(href="#") Категорія
+					li
+						a(href="#") Підкатегорія
+					li Кронштейн генератора Євро 2,3 для КамАЗ
+
+		.product
+			.container
+				.product__box
+					.product__left
+						.swiper.product__swiper
+							.swiper-wrapper.product__swiper-wrapper
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_1.jpeg")
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_2.jpeg")
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_3.jpeg")
+						.swiper.product__swiper-thumbs(thumbsSlider="")
+							.swiper-wrapper.product__swiper-wrapper
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_1.jpeg")
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_2.jpeg")
+								.swiper-slide.product__swiper-slide
+									img(src="img/tmp/prod_3.jpeg")
+
+
+					.product__right
+						h2.product__h2 Кронштейн генератора Євро 2,3 для КамАЗ
