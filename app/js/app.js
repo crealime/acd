@@ -60,12 +60,15 @@ window.addEventListener('load', function () {
 		const link = li.querySelector('a')
 		const clone = headerLiExpand.cloneNode(true)
 		const arr = clone.querySelector('i')
-		clone.classList.remove('d-none')
-		clone.addEventListener('click', function() {
-			li.classList.toggle('header__li-expanded')
-			arr.classList.toggle('header__arr-rotate')
-		});
-		link.after(clone)
+		const hasUl = li.querySelector('ul')
+		if (hasUl) {
+			clone.classList.remove('d-none')
+			clone.addEventListener('click', function () {
+				li.classList.toggle('header__li-expanded')
+				arr.classList.toggle('header__arr-rotate')
+			});
+			link.after(clone)
+		}
 	});
 
 	// Slider
@@ -163,24 +166,6 @@ window.addEventListener('load', function () {
 		document.querySelectorAll('.popup__textarea').forEach(item => {
 			item.value = ''
 		})
-	}
-
-	function showAlert(header = 'Test message!', body = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.') {
-		const cAlert = document.querySelector('.custom-alert')
-		const cAlertHeader = document.querySelector('.custom-alert__header ')
-		const cAlertBody = document.querySelector('.custom-alert__body')
-		cAlertHeader.innerText = header
-		cAlertBody.innerText = body
-		cAlert.classList.remove('d-none')
-		setTimeout(() => {
-			cAlert.classList.add('show')
-		}, 1000)
-		setTimeout(() => {
-			cAlert.classList.remove('show')
-			setTimeout(() => {
-				cAlert.classList.add('d-none')
-			}, 1000)
-		}, 8000)
 	}
 
 	// Send form
