@@ -1452,14 +1452,25 @@ button:hover, .button:hover, button:focus, .button:focus
 
 	&__box
 		display: grid
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+		grid-template-columns: repeat(2, 1fr)
+		grid-template-rows: auto 1fr
 		gap: 20px
 
-		@include media(360)
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+		@include media(575)
+			grid-template-columns: 1fr
+			grid-template-rows: 1fr
+			gap: 10px
 
 	&__left
-		margin-bottom: rem(20)
+		margin-bottom: 20px
+		min-width: 0
+		height: auto
+		grid-area: 1 / 1 / 3 / 2
+
+		@include media(575)
+			margin-bottom: 0
+			order: 2
+			grid-area: auto
 
 	&__swiper
 		margin-bottom: 15px
@@ -1476,14 +1487,28 @@ button:hover, .button:hover, button:focus, .button:focus
 			height: 100%
 			object-fit: cover
 
-	//&__center
+	&__center
+		grid-area: 1 / 2 / 2 / 3
 
-	//&__right
+		@include media(575)
+			order: 1
+			grid-area: auto
+
+	&__right
+		height: auto
+		grid-area: 2 / 2 / 3 / 3
+
+		@include media(575)
+			order: 3
+			grid-area: auto
 
 	&__h2
-		margin-top: 0
+		margin: 0 0 -15px 0
 		font-size: 20px
 		text-transform: none
+
+		@include media(575)
+			margin-bottom: 10px
 
 	&__text
 		margin-bottom: 20px
