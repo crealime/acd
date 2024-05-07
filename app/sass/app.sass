@@ -58,6 +58,9 @@ body
 .ttu
 	text-transform: uppercase
 
+.w-100
+	width: 100%
+
 .h-100
 	height: 100%
 
@@ -72,6 +75,12 @@ body
 
 .d-iblock
 	display: inline-block
+
+.d-table
+	display: table
+
+.d-grid
+	display: grid
 
 .flex-row
 	flex-direction: row
@@ -116,7 +125,7 @@ body
 	z-index: 12
 
 h1, h2, h3, h4, h5, h6
-	text-transform: uppercase
+	//text-transform: uppercase
 	font-weight: 700
 	line-height: 1.2
 	word-wrap: break-word !important
@@ -126,7 +135,7 @@ h1
 	font-size: rem(36)
 
 h2
-	font-size: rem(32)
+	font-size: rem(30)
 
 h3
 	font-size: rem(28)
@@ -1063,8 +1072,9 @@ button:hover, .button:hover, button:focus, .button:focus
 	&_home
 		margin: rem(60) 0
 
-	h2
+	&__h2
 		margin-bottom: rem(40)
+		text-transform: uppercase
 
 	&__item
 		position: relative
@@ -1214,8 +1224,9 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .products
 
-	h2
+	&__h2
 		margin-bottom: rem(30)
+		text-transform: uppercase
 
 	&_home
 		margin: rem(60) 0
@@ -1296,6 +1307,9 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .benefits
 
+	&__h2
+		text-transform: uppercase
+
 	&__box
 		counter-reset: itemCounter
 		margin: 100px 0 20px
@@ -1339,8 +1353,9 @@ button:hover, .button:hover, button:focus, .button:focus
 	padding: rem(60) 0
 	text-align: center
 
-	h2
+	&__h2
 		margin: 0 0 rem(10)
+		text-transform: uppercase
 
 	&__darken
 		position: absolute
@@ -1559,3 +1574,13 @@ button:hover, .button:hover, button:focus, .button:focus
 
 	&__info-right
 		flex: 1 0
+
+.page
+
+	&__box
+		margin: rem(40) 0 rem(50)
+
+	&__h1
+		text-transform: uppercase
+
+

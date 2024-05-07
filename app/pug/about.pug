@@ -1,0 +1,40 @@
+extends includes/_template
+
+block title
+	| Про нас
+
+block main
+	main.main
+		.container
+			nav.breadcrumbs
+				ul
+					li
+						a(href="#") Головна
+					li Про нас
+
+		article.page
+			.container
+				.page__box
+					h1.page__h1 Про нас
+					.page__content
+						h2 Інформація про компанію
+						div
+							b Назва:
+							|
+							| Автосіті Дніпро
+						div
+							b Тип компанії:
+							|
+							| Торгова компанія, Представництво
+
+						h2 Організаційно-правова форма та капітал
+						div
+							b Рік заснування:
+							|
+							| 2013
+						div
+							b Організаційно-правова форма:
+							|
+							| Товариство з обмеженою відповідальністю
+
+

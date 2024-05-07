@@ -79,7 +79,11 @@ window.addEventListener('load', function () {
 			navigation: {
 				nextEl: '.swiper-home__button_next',
 				prevEl: '.swiper-home__button_prev',
-			}
+			},
+			autoplay: {
+				delay: 3000,
+				pauseOnMouseEnter: true,
+			},
 		})
 	}
 
