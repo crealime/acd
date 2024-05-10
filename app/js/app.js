@@ -108,21 +108,22 @@ window.addEventListener('load', function () {
 
 	// Show/hide popup
 
-	function showPopup(elem) {
-		elem.classList.remove('d-none')
+	function showPopup(id) {
+		const popup = document.getElementById(id)
+		popup.classList.remove('d-none')
 		setTimeout(() => {
-			elem.classList.add('show')
+			popup.classList.add('show')
 		}, 100)
 		setTimeout(() => {
 			html.style.overflowY = 'hidden'
-		}, 500)
+		}, 400)
 	}
 	function hidePopup(elem) {
 		html.style.overflowY = 'auto'
 		elem.classList.remove('show')
 		setTimeout(() => {
 			elem.classList.add('d-none')
-		}, 600)
+		}, 400)
 	}
 
 	// Show/hide
@@ -144,8 +145,7 @@ window.addEventListener('load', function () {
 		item.addEventListener('click', function(e) {
 			e.preventDefault()
 			const id = this.href.split('#').pop()
-			const thisPopup = document.getElementById(id)
-			showPopup(thisPopup)
+			showPopup(id)
 		})
 	})
 
@@ -161,6 +161,12 @@ window.addEventListener('load', function () {
 		item.addEventListener('click', function (){
 			hidePopup(this.closest('.popup'))
 		})
+	})
+
+	document.addEventListener('keydown', function(event) {
+		if (event.key === "Escape") {
+			popup.forEach(element => hidePopup(element))
+		}
 	})
 
 	function sendRequest(method, url, body = null) {

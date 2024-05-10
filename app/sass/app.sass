@@ -25,6 +25,20 @@ input, textarea
 	border: none
 	border-radius: $br1
 
+.input, .textarea
+	border: 1px solid $sea
+	background: $gray-light
+	color: $blue
+	border-radius: $br1
+	padding-left: 10px
+	padding-right: 10px
+
+	&::placeholder
+		color: $gray
+
+.input
+	height: rem(50)
+
 a:active, a:focus, input, textarea, input:active, textarea:active, input:focus, textarea:focus, button:active, button:focus
 	outline: none
 
