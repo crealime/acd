@@ -19,7 +19,7 @@ input[type='number']
 	appearance: textfield
 	-moz-appearance: textfield
 
-input, textarea 
+input, textarea, select
 	font-family: $font !important
 	background: $gray-light
 	border: none
@@ -37,9 +37,10 @@ input, textarea
 		color: $gray
 
 .input
-	height: rem(50)
+	min-width: rem(50)
+	min-height: rem(36)
 
-a:active, a:focus, input, textarea, input:active, textarea:active, input:focus, textarea:focus, button:active, button:focus
+a:active, a:focus, input, textarea, input:active, textarea:active, input:focus, textarea:focus, button:active, button:focus, select:active, select:focus
 	outline: none
 
 html
@@ -156,6 +157,11 @@ h3
 
 h4
 	font-style: rem(24)
+
+fieldset
+	border: none
+	padding: 0
+	margin: 0
 
 a
 	color: $sea
@@ -947,10 +953,6 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .popup
 	position: fixed
-	display: flex
-	align-items: center
-	justify-content: space-around
-	flex-direction: column
 	top: 0
 	left: 0
 	width: 100vw
@@ -958,28 +960,40 @@ button:hover, .button:hover, button:focus, .button:focus
 	background: rgba($black, .9)
 	transition-duration: .3s
 	opacity: 0
-	overflow-y: scroll
 	z-index: 15 !important
-
-	&__box
-		display: flex
-		align-items: center
-		justify-content: center
-		flex-direction: column
-		width: 100%
-		max-width: rem(320)
-		padding: rem(20)
 
 	&__close
 		text-align: center
-		margin-bottom: rem(20)
 		cursor: pointer
-		color: $white
-		font-size: 30px
-		transition-duration: 300ms
 
-		&:hover, &:focus, &:active
-			transform: rotate(90deg)
+		svg
+			padding: 10px
+			width: 50px
+			height: 50px
+			fill: $white
+			transition-duration: 300ms
+
+			&:hover, &:focus, &:active
+				transform: rotate(90deg)
+
+	&__box
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: safe center
+		width: 100%
+		height: calc(100% - 60px)
+		overflow-y: auto
+		padding: 20px 15px
+		scrollbar-width: none
+
+		&::-webkit-scrollbar
+			display: none
+
+.callback
+	text-align: center
+	width: 100%
+	max-width: 320px
 
 	&__heading
 		margin-bottom: rem(30)
@@ -1242,6 +1256,9 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .products
 
+	&__box
+		flex: 1 1 auto
+
 	&__h2
 		margin-bottom: rem(30)
 		text-transform: uppercase
@@ -1322,6 +1339,21 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		i
 			margin-left: 10px
+
+	&__sort
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		flex-wrap: wrap
+		gap: 10px
+		text-align: right
+		margin-bottom: 30px
+
+		@include media(720)
+			justify-content: flex-start
+
+	&__sort-text
+		font-weight: 600
 
 .benefits
 
@@ -1601,4 +1633,57 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__h1
 		text-transform: uppercase
 
+.category
+	margin: rem(60) 0
 
+	&__h2
+		text-transform: uppercase
+
+	&__box
+		display: flex
+		gap: 20px
+		margin-top: rem(50)
+		flex-wrap: wrap
+
+		@include media(720)
+			margin-top: rem(10)
+
+.filters
+	width: 25%
+	margin-bottom: 10px
+	overflow: hidden
+	
+	@include media(720)
+		width: 100%
+		height: 30px
+
+	&__title
+		font-size: rem(20)
+		font-weight: 600
+		margin-top: 0
+		margin-bottom: 10px
+
+		@include media(720)
+			text-align: center
+			text-decoration: underline
+			cursor: pointer
+
+	&__block
+		display: flex
+		flex-direction: column
+		gap: 10px
+
+	&__name
+		margin-bottom: 5px
+		font-size: rem(16)
+		font-weight: 600
+
+	&__input_text
+		margin-left: 10px
+
+	&__button
+		margin-top: 20px
+		margin-right: 10px
+
+.filters.show
+	height: auto

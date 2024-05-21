@@ -20,29 +20,35 @@
 		<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css">
 		<link href="css/app.min.css" rel="stylesheet" type="text/css">
 		<script src="js/libs.min.js" defer></script>
-		<script src="js/app.js" defer></script>
+		<script src="js/app.min.js" defer></script>
+		<script src="js/forms.js" defer></script>
 		<meta name="theme-color" content="#1B2354">
 	</head>
 	<body>
-		<form class="form-ajax" method="POST">
-			<div class="popup d-none" id="callback">
-				<input type="hidden" name="admin_email" value="creaslippers@gmail.com">
-				<input type="hidden" name="from_email" value="admin@site.com">
-				<input type="hidden" name="project_name" value="АвтоСітіДніпро">
-				<input type="hidden" name="form_subject" value="Запит зворотного дзвінка">
-				<input type="hidden" name="сool" value="Запит відправлено!">
-				<input type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом">
-				<input type="hidden" name="bad" value="Сталася помилка!">
-				<input type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.">
-				<div class="popup__box">
-					<div class="popup__close"><i class="fa-solid fa-xmark"></i></div>
-					<div class="popup__heading">Зворотний дзвінок</div>
-					<input class="popup__input" type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required>
-					<input class="popup__input" type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required>
-					<button class="popup__button button_big">Відправити</button>
+		<div class="popup d-none">
+			<div class="popup__close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
+			<div class="popup__box"></div>
+		</div>
+		<div class="d-none" id="callback">
+			<div class="popup-content">
+				<div class="callback">
+					<form class="form-ajax" method="POST">
+						<input type="hidden" name="admin_email" value="creaslippers@gmail.com">
+						<input type="hidden" name="from_email" value="admin@site.com">
+						<input type="hidden" name="project_name" value="АвтоСітіДніпро">
+						<input type="hidden" name="form_subject" value="Запит зворотного дзвінка">
+						<input type="hidden" name="сool" value="Запит відправлено!">
+						<input type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом">
+						<input type="hidden" name="bad" value="Сталася помилка!">
+						<input type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.">
+						<div class="callback__heading">Зворотний дзвінок</div>
+						<input class="callback__input" type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required>
+						<input class="callback__input" type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required>
+						<button class="callback__button button_big">Відправити</button>
+					</form>
 				</div>
 			</div>
-		</form>
+		</div>
 		<div class="warning d-none">
 			<div class="warning__back">
 				<div class="warning__text">Взаємодіючи з сайтом, ви погоджуєтесь з <a class="warning__link popup-click" href="policy">політикою конфіденційності</a>.</div>
@@ -65,7 +71,7 @@
 								</div>
 								<div class="header__infoblock header__infoblock_2"><a class="header__tel" href="tel:+380506310130">+38 (050) 631-01-30</a><a class="header__tel" href="tel:+380988828177">+38 (098) 882-81-77</a></div>
 								<div class="header__infoblock header__infoblock_3"><a class="header__address" href="https://maps.app.goo.gl/m4xm4G2kBT5NWeCH6" target="_blank">Дніпро, пр. Богдана Хмельницького, 47</a></div>
-								<div class="header__infoblock header__infoblock_4"><a class="header__link" href="#">Підбір Запчастин</a><a class="header__link call-popup callback" href="#callback">Зворотній дзвінок</a></div>
+								<div class="header__infoblock header__infoblock_4"><a class="header__link" href="#">Підбір Запчастин</a><a class="header__link popup-call" href="#callback">Зворотній дзвінок</a></div>
 							</div>
 							<div class="header__menu-box">
 								<div class="header__menu">
@@ -384,7 +390,7 @@
 									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
 										грн
 									</div>
-									<form class="products__form" method="POST">
+									<form class="form-prod" method="POST">
 										<input type="hidden" name="id" value="123">
 										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
 									</form>
@@ -396,7 +402,7 @@
 									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
 										грн
 									</div>
-									<form class="products__form" method="POST">
+									<form class="form-prod" method="POST">
 										<input type="hidden" name="id" value="123">
 										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
 									</form>
@@ -408,7 +414,7 @@
 									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
 										грн
 									</div>
-									<form class="products__form" method="POST">
+									<form class="form-prod" method="POST">
 										<input type="hidden" name="id" value="123">
 										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
 									</form>
@@ -420,7 +426,7 @@
 									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
 										грн
 									</div>
-									<form class="products__form" method="POST">
+									<form class="form-prod" method="POST">
 										<input type="hidden" name="id" value="123">
 										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
 									</form>

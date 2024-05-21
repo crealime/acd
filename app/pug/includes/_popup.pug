@@ -1,20 +1,23 @@
-form.form-ajax(method='POST')
-	#callback.popup.d-none
-		input(type="hidden" name="admin_email" value="creaslippers@gmail.com")
-		input(type="hidden" name="from_email" value="admin@site.com")
-		input(type="hidden" name="project_name" value="АвтоСітіДніпро")
-		input(type="hidden" name="form_subject" value="Запит зворотного дзвінка")
-		input(type="hidden" name="сool" value="Запит відправлено!")
-		input(type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом")
-		input(type="hidden" name="bad" value="Сталася помилка!")
-		input(type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.")
-		.popup__box
-			.popup__close
-				i.fa-solid.fa-xmark
-			.popup__heading Зворотний дзвінок
-			input.popup__input(type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required)
-			input.popup__input(type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required)
-			button.popup__button.button_big Відправити
+.popup.d-none
+	.popup__close <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+	.popup__box
+
+#callback.d-none
+	.popup-content
+		.callback
+			form.form-ajax(method='POST')
+				input(type="hidden" name="admin_email" value="creaslippers@gmail.com")
+				input(type="hidden" name="from_email" value="admin@site.com")
+				input(type="hidden" name="project_name" value="АвтоСітіДніпро")
+				input(type="hidden" name="form_subject" value="Запит зворотного дзвінка")
+				input(type="hidden" name="сool" value="Запит відправлено!")
+				input(type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом")
+				input(type="hidden" name="bad" value="Сталася помилка!")
+				input(type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.")
+				.callback__heading Зворотний дзвінок
+				input.callback__input(type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required)
+				input.callback__input(type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required)
+				button.callback__button.button_big Відправити
 
 .warning.d-none
 	.warning__back

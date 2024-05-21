@@ -1,0 +1,215 @@
+extends includes/_template
+
+block title
+	| Категорії
+
+block main
+	main.main
+		.container
+			nav.breadcrumbs
+				ul
+					li
+						a(href="#") Головна
+					li Категорії
+		section.section.category
+			.container
+				h2.category__h2.text-center Двигун камаз
+				.category__box
+					.filters
+						h3.filters__title Фільтри
+						form.filters__form(method='POST')
+							fieldset.filters__block
+								h4.filters__name Виробник
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Виробник 01')
+									span.filters__input_text Виробник 01
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Виробник 02')
+									span.filters__input_text Виробник 02
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Виробник 03')
+									span.filters__input_text Виробник 03
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Виробник 04')
+									span.filters__input_text Виробник 04
+							fieldset.filters__block
+								h4.filters__name Вид
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Поршні')
+									span.filters__input_text Поршні
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Прокладки')
+									span.filters__input_text Прокладки
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Шатуни')
+									span.filters__input_text Шатуни
+								label.filters__label
+									input.filters__input_checkbox(type="checkbox" name='Шестерні')
+									span.filters__input_text Шестерні
+							button.button.button_blue.filters__button(type="reset") Скинути
+							button.button.button_blue.filters__button(type="submit") Фільтрувати
+					.products__box
+						form.form-sort(method='POST')
+							.products__sort
+								span.products__sort-text Сортування
+								select.input.products__sort-input(name="sort")
+									option(value="1") За замовчуванням
+									option(value="2") За зростанням ціни
+									option(value="3") За спаданням ціни
+								button.button.button_blue(type="submit") Сортувати
+						.grid-4
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+							.products__item
+								a.products__img-box(href="product.html")
+									img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+								h3.products__h3
+									a.products__h3-link(href="product.html") Поршень 740.1004015-10
+								.products__article 740.1004015-10
+								.products__instock В наявності
+								.products__cost 1&nbsp;445
+									span.products__currency
+									|
+									| грн
+								form.form-prod(method='POST')
+									input(type="hidden" name="id" value="123")
+									button.button.button_mini.products__button Купити
+										i.fa-solid.fa-cart-shopping
+		section.section.products.products_product
+			.container
+				h2.products__h2.text-center Ви дивилися
+				.products__box
+					.grid-4
+						.products__item
+							a.products__img-box(href="product.html")
+								img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+							h3.products__h3
+								a.products__h3-link(href="product.html") Поршень 740.1004015-10
+							.products__article 740.1004015-10
+							.products__instock В наявності
+							.products__cost 1&nbsp;445
+								span.products__currency
+								|
+								| грн
+							form.form-prod(method='POST')
+								input(type="hidden" name="id" value="123")
+								button.button.button_mini.products__button Купити
+									i.fa-solid.fa-cart-shopping
+						.products__item
+							a.products__img-box(href="product.html")
+								img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+							h3.products__h3
+								a.products__h3-link(href="product.html") Поршень 740.1004015-10
+							.products__article 740.1004015-10
+							.products__instock В наявності
+							.products__cost 1&nbsp;445
+								span.products__currency
+								|
+								| грн
+							form.form-prod(method='POST')
+								input(type="hidden" name="id" value="123")
+								button.button.button_mini.products__button Купити
+									i.fa-solid.fa-cart-shopping
+						.products__item
+							a.products__img-box(href="product.html")
+								img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+							h3.products__h3
+								a.products__h3-link(href="product.html") Поршень 740.1004015-10
+							.products__article 740.1004015-10
+							.products__instock В наявності
+							.products__cost 1&nbsp;445
+								span.products__currency
+								|
+								| грн
+							form.form-prod(method='POST')
+								input(type="hidden" name="id" value="123")
+								button.button.button_mini.products__button Купити
+									i.fa-solid.fa-cart-shopping
+						.products__item
+							a.products__img-box(href="product.html")
+								img.products__img(src="img/tmp/porshen.jpg" alt="" loading="lazy")
+							h3.products__h3
+								a.products__h3-link(href="product.html") Поршень 740.1004015-10
+							.products__article 740.1004015-10
+							.products__instock В наявності
+							.products__cost 1&nbsp;445
+								span.products__currency
+								|
+								| грн
+							form.form-prod(method='POST')
+								input(type="hidden" name="id" value="123")
+								button.button.button_mini.products__button Купити
+									i.fa-solid.fa-cart-shopping

@@ -13,14 +13,17 @@ window.addEventListener('load', function () {
 	const overlay = document.querySelector('.overlay')
 	const headerBurgerOpen = document.querySelector('.header__burger .fa-bars')
 	const headerBurgerClose = document.querySelector('.header__burger .fa-xmark')
-	const callPopup = document.querySelectorAll('.call-popup')
-	const popup = document.querySelectorAll('.popup')
+	const callPopup = document.querySelectorAll('.popup-call')
+	const popup = document.querySelector('.popup')
+	const popupBox = document.querySelector('.popup__box')
+	const popupClose = document.querySelector('.popup__close')
 	const formAjax = document.querySelectorAll('.form-ajax')
-	const popupClose = document.querySelectorAll('.popup__close')
 	const warning = document.querySelector('.warning')
 	const warningClose = document.querySelector('.warning__close')
 	const warningLink = document.querySelector('.warning__link')
 	const scrollup = document.querySelector('.scrollup')
+	const filters = document.querySelector('.filters')
+	const filtersTitle = document.querySelector('.filters__title')
 
 	// Change main margin-top
 	function changeMainMarginTop() {
@@ -106,26 +109,6 @@ window.addEventListener('load', function () {
 		});
 	}
 
-	// Show/hide popup
-
-	function showPopup(id) {
-		const popup = document.getElementById(id)
-		popup.classList.remove('d-none')
-		setTimeout(() => {
-			popup.classList.add('show')
-		}, 100)
-		setTimeout(() => {
-			html.style.overflowY = 'hidden'
-		}, 400)
-	}
-	function hidePopup(elem) {
-		html.style.overflowY = 'auto'
-		elem.classList.remove('show')
-		setTimeout(() => {
-			elem.classList.add('d-none')
-		}, 400)
-	}
-
 	// Show/hide
 
 	function show(elem) {
@@ -141,26 +124,50 @@ window.addEventListener('load', function () {
 		}, 600)
 	}
 
-	callPopup.forEach(item => {
-		item.addEventListener('click', function(e) {
+	// Popup
+
+	let popupSource = null
+	let popupContent = null
+
+	function showPopup() {
+		popup.classList.remove('d-none')
+		setTimeout(() => {
+			popup.classList.add('show')
+		}, 100)
+		setTimeout(() => {
+			html.style.overflowY = 'hidden'
+		}, 400)
+	}
+
+	function hidePopup() {
+		html.style.overflowY = 'auto'
+		popup.classList.remove('show')
+		setTimeout(() => {
+			popup.classList.add('d-none')
+			popupSource.appendChild(popupContent)
+		}, 400)
+	}
+
+	callPopup.forEach(link => {
+		link.addEventListener('click', function(e) {
 			e.preventDefault()
 			const id = this.href.split('#').pop()
-			showPopup(id)
+			popupSource = document.getElementById(id)
+			popupContent = popupSource.querySelector('.popup-content')
+			popupBox.appendChild(popupContent)
+			showPopup()
 		})
 	})
 
-	popup.forEach(item => {
-		item.addEventListener('click', (e) => {
-			if (e.target.classList.contains('popup')) {
-				hidePopup(e.target)
-			}
-		})
+
+	popup.addEventListener('click', (e) => {
+		if (e.target.classList.contains('popup')) {
+			hidePopup()
+		}
 	})
 
-	popupClose.forEach(item => {
-		item.addEventListener('click', function (){
-			hidePopup(this.closest('.popup'))
-		})
+	popupClose.addEventListener('click', function (){
+		hidePopup()
 	})
 
 	document.addEventListener('keydown', function(event) {
@@ -168,6 +175,8 @@ window.addEventListener('load', function () {
 			popup.forEach(element => hidePopup(element))
 		}
 	})
+
+	// Send Request
 
 	function sendRequest(method, url, body = null) {
 		const headers = {
@@ -396,6 +405,12 @@ rgba(0,0,0,0.9)`,
 				scrollup.classList.add('d-none')
 			}, 300)
 		}
+	}
+
+	if (filtersTitle) {
+		filtersTitle.addEventListener('click', function(e) {
+			if (filters) filters.classList.toggle('show')
+		})
 	}
 
 })
