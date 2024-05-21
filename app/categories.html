@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>АвтоСітіДніпро
+		<title>Категорії
 		</title>
 		<meta name="description" content="Опис АвтоСітіДніпро">
 		<link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
@@ -296,20 +296,16 @@
 			</header>
 			<main class="main">
 				<div class="container">
-					<div class="swiper swiper-home">
-						<div class="swiper-home__button swiper-home__button_next"><i class="fa-solid fa-caret-right"></i></div>
-						<div class="swiper-home__button swiper-home__button_prev"><i class="fa-solid fa-caret-left"></i></div>
-						<div class="swiper-wrapper">
-							<div class="swiper-slide"><a href="#"><img src="img/tmp/slider_001.jpg" alt="" loading="lazy"></a></div>
-							<div class="swiper-slide"><a href="#"><img src="img/tmp/slider_002.jpg" alt="" loading="lazy"></a></div>
-							<div class="swiper-slide"><a href="#"><img src="img/tmp/slider_003.jpg" alt="" loading="lazy"></a></div>
-							<div class="swiper-slide"><a href="#"><img src="img/tmp/slider_004.jpg" alt="" loading="lazy"></a></div>
-						</div>
-					</div>
+					<nav class="breadcrumbs">
+						<ul>
+							<li><a href="#">Головна</a></li>
+							<li>Категорії</li>
+						</ul>
+					</nav>
 				</div>
-				<section class="section categories categories_home">
+				<section class="section categories categories_page">
 					<div class="container">
-						<h2 class="categories__h2 text-center">Популярні категорії</h2>
+						<h2 class="categories__h2 text-center">Категорії</h2>
 						<div class="categories__box">
 							<div class="grid-4"><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_001.jpg" alt="" loading="lazy">
 									<div class="categories__darken">
@@ -335,37 +331,35 @@
 									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_002.jpg" alt="" loading="lazy">
 									<div class="categories__darken">
 										<h3 class="categories__h3">Супутні товари</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_001.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Камаз</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_002.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Маз</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_003.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Краз</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_001.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Урал</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_002.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Зил</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_003.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Газон</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_001.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Вантажна іномарка</h3>
+									</div></a><a class="categories__item" href="categories.html"><img class="categories__img" src="img/tmp/some_002.jpg" alt="" loading="lazy">
+									<div class="categories__darken">
+										<h3 class="categories__h3">Супутні товари</h3>
 									</div></a></div>
-							<div class="text-center"><a class="button button_big button_blue categories__link" href="categories.html">Дивитися всі</a></div>
 						</div>
 					</div>
 				</section>
-				<section class="section home-banner">
-					<div class="container">
-						<div class="home-banner__box">
-							<div class="home-banner__left">
-								<h2 class="home-banner__h2">Індивідуаль&shy;ний підбір запчастин</h2>
-								<div class="home-banner__text">Залиште заявку і ми безкоштовно підберемо<br>для вас автозапчастини</div>
-							</div>
-							<div class="home-banner__center"><img class="home-banner__img" src="img/front/some.png" alt="" loading="lazy"></div>
-							<div class="home-banner__right">
-								<form class="form-ajax" method="POST">
-									<input type="hidden" name="admin_email" value="creaslippers@gmail.com">
-									<input type="hidden" name="from_email" value="admin@site.com">
-									<input type="hidden" name="project_name" value="АвтоСітіДніпро">
-									<input type="hidden" name="form_subject" value="Запит зворотного дзвінка">
-									<input type="hidden" name="сool" value="Запит відправлено!">
-									<input type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом">
-									<input type="hidden" name="bad" value="Сталася помилка!">
-									<input type="hidden" name="bad_message" value="Спробуйте пізніше або зв'яжіться з нами іншим способом.">
-									<input class="home-banner__input" type="tel" name="Телефон" maxlength="30" placeholder="Ваш номер телефону" required>
-									<button class="button button_big home-banner__button">Залишити заявку</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section products products_home">
+				<section class="section products products_product">
 					<div class="container">
 						<h2 class="products__h2 text-center">Акційні товари</h2>
 						<div class="products__box">
@@ -418,111 +412,10 @@
 										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
 									</form>
 								</div>
-								<div class="products__item"><a class="products__img-box" href="product.html"><img class="products__img" src="img/tmp/porshen.jpg" alt="" loading="lazy"></a>
-									<h3 class="products__h3"><a class="products__h3-link" href="product.html">Поршень 740.1004015-10</a></h3>
-									<div class="products__article">740.1004015-10</div>
-									<div class="products__instock">В наявності</div>
-									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
-										грн
-									</div>
-									<form class="products__form" method="POST">
-										<input type="hidden" name="id" value="123">
-										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
-									</form>
-								</div>
-								<div class="products__item"><a class="products__img-box" href="product.html"><img class="products__img" src="img/tmp/porshen.jpg" alt="" loading="lazy"></a>
-									<h3 class="products__h3"><a class="products__h3-link" href="product.html">Поршень 740.1004015-10</a></h3>
-									<div class="products__article">740.1004015-10</div>
-									<div class="products__instock">В наявності</div>
-									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
-										грн
-									</div>
-									<form class="products__form" method="POST">
-										<input type="hidden" name="id" value="123">
-										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
-									</form>
-								</div>
-								<div class="products__item"><a class="products__img-box" href="product.html"><img class="products__img" src="img/tmp/porshen.jpg" alt="" loading="lazy"></a>
-									<h3 class="products__h3"><a class="products__h3-link" href="product.html">Поршень 740.1004015-10</a></h3>
-									<div class="products__article">740.1004015-10</div>
-									<div class="products__instock">В наявності</div>
-									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
-										грн
-									</div>
-									<form class="products__form" method="POST">
-										<input type="hidden" name="id" value="123">
-										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
-									</form>
-								</div>
-								<div class="products__item"><a class="products__img-box" href="product.html"><img class="products__img" src="img/tmp/porshen.jpg" alt="" loading="lazy"></a>
-									<h3 class="products__h3"><a class="products__h3-link" href="product.html">Поршень 740.1004015-10</a></h3>
-									<div class="products__article">740.1004015-10</div>
-									<div class="products__instock">В наявності</div>
-									<div class="products__cost">1&nbsp;445<span class="products__currency"></span>
-										грн
-									</div>
-									<form class="products__form" method="POST">
-										<input type="hidden" name="id" value="123">
-										<button class="button button_mini products__button">Купити<i class="fa-solid fa-cart-shopping"></i></button>
-									</form>
-								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="section benefits">
-					<div class="container">
-						<h2 class="benefits__h2 text-center">Чому варто обрати нас?</h2>
-						<div class="benefits__box">
-							<div class="grid-3">
-								<div class="benefits__item">
-									<div class="benefits__title">Lorem ipsum component variant main layer</div>
-									<div class="benefits__text">Lorem ipsum component variant main layer. Blur style selection distribute team vertical plugin selection horizontal library.</div>
-								</div>
-								<div class="benefits__item">
-									<div class="benefits__title">Lorem ipsum component variant main layer</div>
-									<div class="benefits__text">Lorem ipsum component variant main layer. Blur style selection distribute team vertical plugin selection horizontal library.</div>
-								</div>
-								<div class="benefits__item">
-									<div class="benefits__title">Lorem ipsum component variant main layer</div>
-									<div class="benefits__text">Lorem ipsum component variant main layer. Blur style selection distribute team vertical plugin selection horizontal library.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="section questions" style="background-image: url(img/front/kamaz.png)">
-					<div class="questions__darken"></div>
-					<div class="container position-relative">
-						<h2 class="questions__h2 text-center white">Залишилися питання?</h2>
-						<div class="questions__text white">Наші менеджери <span class="ttu">безкоштовно</span> проконсультують Вас!</div>
-						<form class="form-ajax" method="POST">
-							<input type="hidden" name="admin_email" value="creaslippers@gmail.com">
-							<input type="hidden" name="from_email" value="admin@site.com">
-							<input type="hidden" name="project_name" value="АвтоСітіДніпро">
-							<input type="hidden" name="form_subject" value="Запит зворотного дзвінка">
-							<input type="hidden" name="сool" value="Запит відправлено!">
-							<input type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом">
-							<input type="hidden" name="bad" value="Сталася помилка!">
-							<input type="hidden" name="bad_message" value="Спробуйте пізніше або зв'яжіться з нами іншим способом.">
-							<div class="questions__box">
-								<input class="questions__input" type="tel" name="Телефон" maxlength="30" placeholder="Ваш номер телефону" required>
-								<textarea class="questions__textarea" name="Питання" maxlength="1000" placeholder="Ваше питання" required></textarea>
-								<button class="button button_big questions__button">Отримати консультацію</button>
-							</div>
-						</form>
-					</div>
-					<div class="questions__man" style="background-image: url(img/front/auto-mechani.png)"></div>
-				</section>
-				<div class="home-text">
-					<div class="container">
-						<h4>Запчастини для КАМАЗ: Якість та Надійність</h4>
-						<p>Власники вантажівок Камського автозаводу цінують наш інтернет-магазин  за надійність та великий вибір запчастин КАМАЗ. Наш каталог налічує понад 4000 оригінальних деталей від виробника, що включає електрику, електроніку, оптику, коробки передач та інші комплектуючі.</p>
-						<p>КАМАЗ виробляє різні моделі великовантажних машин, включно з тягачами, самоскидами, бортовими вантажівками та військовими моделями, відомими своєю простотою в експлуатації та довговічністю. Запчастини для цих машин потрібно обирати уважно, оскільки підробки можуть призвести до серйозних поломок. пропонує лише сертифіковані запчастини КАМАЗ, що забезпечують якість та довговічність. Купівля від офіційного постачальника гарантує відповідність всім технологічним стандартам та мінімізує ризик поломок. Кожна деталь у нашому асортименті супроводжується гарантією від виробника, підтвердженою документально. Відрізнити оригінальні деталі можна за фірмовою упаковкою та спеціальним маркуванням.</p>
-						<h4>Вибираючи Нас:</h4>
-						<p>Ви обираєте надійність і якість для своєї великовантажної техніки КАМАЗ. Приєднуйтесь до численних задоволених клієнтів та скористайтесь нашими оптовими та роздрібними пропозиціями, а також зручною доставкою по всій Україні. Ключові слова: Запчастини КАМАЗ, інтернет-магазин запчастин, оригінальні деталі КАМАЗ, великовантажні машини, сертифіковані запчастини.</p>
-					</div>
-				</div>
 			</main>
 			<footer class="footer">
 				<div class="container">

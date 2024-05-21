@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
 		html.style.overflowY = html.style.overflowY !== 'hidden' ? 'hidden' : 'auto'
 	}
 
-	window.addEventListener('resize', () => html.style.overflowY = 'auto')
+	// window.addEventListener('resize', () => html.style.overflowY = 'auto')
 
 	headerBurger.addEventListener('click', () => {
 		expandMobileMenu()
