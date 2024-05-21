@@ -131,6 +131,9 @@ window.addEventListener('load', function () {
 
 	function showPopup() {
 		popup.classList.remove('d-none')
+		if (popupContent.offsetHeight > popupBox.offsetHeight + 20) {
+			popupBox.classList.add('popup__box_large-content')
+		}
 		setTimeout(() => {
 			popup.classList.add('show')
 		}, 100)
@@ -140,6 +143,7 @@ window.addEventListener('load', function () {
 	}
 
 	function hidePopup() {
+		popupBox.classList.remove('popup__box_large-content')
 		html.style.overflowY = 'auto'
 		popup.classList.remove('show')
 		setTimeout(() => {

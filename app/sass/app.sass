@@ -980,7 +980,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		display: flex
 		flex-direction: column
 		align-items: center
-		justify-content: safe center
+		justify-content: center
 		width: 100%
 		height: calc(100% - 60px)
 		overflow-y: auto
@@ -989,6 +989,9 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		&::-webkit-scrollbar
 			display: none
+
+		&_large-content
+			justify-content: start
 
 .callback
 	text-align: center
@@ -1677,6 +1680,9 @@ button:hover, .button:hover, button:focus, .button:focus
 		margin-bottom: 5px
 		font-size: rem(16)
 		font-weight: 600
+
+	&__label
+		cursor: pointer
 
 	&__input_text
 		margin-left: 10px
