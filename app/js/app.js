@@ -160,8 +160,8 @@ window.addEventListener('load', function () {
 	})
 
 
-	popup.addEventListener('click', (e) => {
-		if (e.target.classList.contains('popup')) {
+	popupBox.addEventListener('click', (e) => {
+		if (e.target.classList.contains('popup__box')) {
 			hidePopup()
 		}
 	})
@@ -172,7 +172,7 @@ window.addEventListener('load', function () {
 
 	document.addEventListener('keydown', function(event) {
 		if (event.key === "Escape") {
-			popup.forEach(element => hidePopup(element))
+			hidePopup()
 		}
 	})
 
