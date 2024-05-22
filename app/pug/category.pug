@@ -17,7 +17,7 @@ block main
 				.category__box
 					.filters
 						h3.filters__title Фільтри
-						form.filters__form(method='POST')
+						form.filters__form.form-identification-your-class(method="POST")
 							fieldset.filters__block
 								h4.filters__name Виробник
 								label.filters__label
@@ -49,7 +49,7 @@ block main
 							button.button.button_blue.filters__button(type="reset") Скинути
 							button.button.button_blue.filters__button(type="submit") Фільтрувати
 					.products__box
-						form.form-sort(method='POST')
+						form.form-sort.form-identification-your-class(method="POST")
 							.products__sort
 								span.products__sort-text Сортування
 								select.input.products__sort-select(name="sort")
@@ -69,7 +69,7 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
@@ -84,7 +84,7 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
@@ -99,7 +99,7 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
@@ -114,7 +114,7 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
@@ -129,7 +129,7 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
@@ -144,10 +144,27 @@ block main
 									span.products__currency
 									|
 									| грн
-								form.form-prod(method='POST')
+								form.form-prod.form-identification-your-class(method="POST")
 									input(type="hidden" name="id" value="123")
 									button.button.button_mini.products__button Купити
 										i.fa-solid.fa-cart-shopping
+						.pagination
+							nav
+								ul
+									li
+										a.button.disabled(href="#") Перша
+									li
+										a.button.disabled(href="#") «
+									li
+										a.button.active(href="#") 1
+									li
+										a.button(href="#") 2
+									li
+										a.button(href="#") 3
+									li
+										a.button(href="#") »
+									li
+										a.button(href="#") Остання
 		section.section.products.products_product
 			.container
 				h2.products__h2.text-center Ви дивилися
@@ -164,7 +181,7 @@ block main
 								span.products__currency
 								|
 								| грн
-							form.form-prod(method='POST')
+							form.form-prod.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="123")
 								button.button.button_mini.products__button Купити
 									i.fa-solid.fa-cart-shopping
@@ -179,7 +196,7 @@ block main
 								span.products__currency
 								|
 								| грн
-							form.form-prod(method='POST')
+							form.form-prod.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="123")
 								button.button.button_mini.products__button Купити
 									i.fa-solid.fa-cart-shopping
@@ -194,7 +211,7 @@ block main
 								span.products__currency
 								|
 								| грн
-							form.form-prod(method='POST')
+							form.form-prod.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="123")
 								button.button.button_mini.products__button Купити
 									i.fa-solid.fa-cart-shopping
@@ -209,7 +226,7 @@ block main
 								span.products__currency
 								|
 								| грн
-							form.form-prod(method='POST')
+							form.form-prod.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="123")
 								button.button.button_mini.products__button Купити
 									i.fa-solid.fa-cart-shopping

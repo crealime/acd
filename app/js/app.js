@@ -143,12 +143,14 @@ window.addEventListener('load', function () {
 	}
 
 	function hidePopup() {
-		popupBox.classList.remove('popup__box_large-content')
 		html.style.overflowY = 'auto'
 		popup.classList.remove('show')
 		setTimeout(() => {
 			popup.classList.add('d-none')
+			popupBox.classList.remove('popup__box_large-content')
 			popupSource.appendChild(popupContent)
+			popupSource = null
+			popupContent = null
 		}, 400)
 	}
 
@@ -162,7 +164,6 @@ window.addEventListener('load', function () {
 			showPopup()
 		})
 	})
-
 
 	popupBox.addEventListener('click', (e) => {
 		if (e.target.classList.contains('popup__box')) {

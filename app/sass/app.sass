@@ -29,7 +29,7 @@ select
 	cursor: pointer
 
 .input, .textarea
-	border: 1px solid $sea
+	border: 1px solid $gray
 	background: $gray-light
 	color: $blue
 	border-radius: $br1
@@ -138,9 +138,39 @@ body
 .position-relative
 	position: relative
 
-.show
-	opacity: 1 !important
-	z-index: 12
+.mt-1
+	margin-top: rem(10)
+
+.mt-2
+	margin-top: rem(20)
+
+.mt-3
+	margin-top: rem(30)
+
+.mt-4
+	margin-top: rem(40)
+
+.mt-5
+	margin-top: rem(50)
+
+.mb-1
+	margin-bottom: rem(10)
+
+.mb-2
+	margin-bottom: rem(20)
+
+.mb-3
+	margin-bottom: rem(30)
+
+.mb-4
+	margin-bottom: rem(40)
+
+.mb-5
+	margin-bottom: rem(50)
+
+//.show
+//	opacity: 1 !important
+//	z-index: 12
 
 h1, h2, h3, h4, h5, h6
 	//text-transform: uppercase
@@ -885,7 +915,7 @@ button:hover, .button:hover, button:focus, .button:focus
 	left: 0
 	width: 100vw
 	height: 100vh
-	background: rgba($black, .9)
+	background: rgba($black, .8)
 	z-index: 5
 	opacity: 0
 	visibility: hidden
@@ -1101,6 +1131,10 @@ button:hover, .button:hover, button:focus, .button:focus
 			&:after
 				transform: rotate(45deg)
 
+.warning.show
+	opacity: 1 !important
+	z-index: 12
+
 .categories
 
 	&_home
@@ -1277,7 +1311,7 @@ button:hover, .button:hover, button:focus, .button:focus
 
 	&__item
 		border-radius: $br2
-		border: 1px solid $blue-extra-light
+		border: 1px solid $gray
 		box-shadow: $bsh-none
 		overflow: hidden
 		transition-duration: 300ms
@@ -1631,6 +1665,9 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__info-right
 		flex: 1 0
 
+.swiper-slide-thumb-active
+	border: 1px solid $gray
+
 .page
 
 	&__box
@@ -1696,3 +1733,213 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .filters.show
 	height: auto
+
+.pagination
+	margin-top: 40px
+
+	ul
+		margin: 0
+		padding: 0
+
+	ul
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+		gap: 5px
+
+	li
+		list-style: none
+
+	.button
+		background: $sea
+
+		&:hover, &:focus, &:active
+			background: $accent
+			color: $white
+
+	.disabled
+		background: $blue-light
+
+		&:hover, &:focus, &:active
+			background: $blue-light
+
+	.active
+		background: $accent
+
+.cart
+	margin: rem(60) 0
+
+	&__box
+		display: flex
+		gap: 50px
+
+		@include media(740)
+			flex-direction: column-reverse
+
+	&__left
+		width: 33%
+
+		@include media(740)
+			width: 100%
+
+	&__right
+		width: calc(66% - 50px)
+
+		@include media(740)
+			width: 100%
+
+	&__h2
+		text-transform: uppercase
+
+	&__h3
+		text-transform: uppercase
+		font-size: 20px
+		font-weight: 600
+
+	&__info
+		margin-top: 30px
+
+	&__info-text
+		font-weight: 600
+		text-transform: uppercase
+		margin-top: 15px
+		margin-bottom: 3px
+
+	&__input
+		width: 100%
+
+	&__info-error
+		color: $warning
+		margin-top: 5px
+		display: none
+
+	&__info-error.show
+		display: block
+
+	&__textarea
+		width: 100%
+		max-width: 100%
+		min-height: 100px
+		margin-bottom: 15px
+
+	&__registration
+		display: block
+		margin-top: 30px
+		padding: 15px
+		background: $gray-light
+		transition-duration: 300ms
+		color: $blue
+		border-radius: $br1
+
+		&:hover, &:focus, &:active
+			background: $blue
+			color: $white
+
+		&-title
+			text-transform: uppercase
+			text-decoration: underline
+			font-weight: 700
+			margin-bottom: 5px
+
+		&-text
+			font-size: 14px
+			line-height: 1.2
+
+	&__products
+		position: relative
+
+	&__product
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 20px
+		padding: 20px 0
+		border-bottom: 1px solid $gray
+
+	&__img
+		width: 120px
+		height: 120px
+		border-radius: $br2
+		overflow: hidden
+		flex: 0 0 auto
+
+		@include media(575)
+			width: 100px
+			height: 100px
+
+		@include media(400)
+			width: 50px
+			height: 50px
+
+		@include media(350)
+			display: none
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&__product-info
+		display: flex
+		flex-direction: column
+		gap: 5px
+
+	&__product-title, &__product-cost
+		font-size: 20px
+		font-weight: 600
+		line-height: 1.2
+
+		@include media(575)
+			font-size: 16px
+
+		&__product-article
+
+			@include media(575)
+				font-size: 14px
+
+	&__controls
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		font-size: 24px
+
+	&__increase, &__decrease
+		cursor: pointer
+		transition-duration: 300ms
+
+	&__increase
+
+		&:hover, &:focus, &:active
+			transform: translateY(-2px)
+
+	&__decrease
+
+		&:hover, &:focus, &:active
+			transform: translateY(2px)
+
+	&__count
+		width: 44px
+		font-size: 20px
+		font-weight: 600
+		text-align: center
+
+	&__delete
+		font-size: 24px
+		padding: 0
+		background: none
+		color: $blue
+		margin-left: -10px
+
+		&:hover, &:focus, &:active
+			background: none
+			transform: rotate(90deg)
+
+	&__total
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		font-size: 24px
+		font-weight: 700
+		margin-top: 30px

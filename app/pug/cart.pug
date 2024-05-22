@@ -1,0 +1,140 @@
+extends includes/_template
+
+block title
+	| Категорії
+
+block main
+	main.main
+		section.section.cart
+			.container
+				h2.cart__h2.text-center Кошик
+				.cart__box
+					.cart__left
+						h3.cart__h3 Оформлення замовлення
+						.cart__info
+							form.form-order.form-identification-your-class(method="POST")
+								label.cart__label
+									.cart__info-text Ім'я:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="name" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Прізвище:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="lastname" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Телефон:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="tel" maxlength="50" name="phone" required)
+									.cart__info-error.show Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Спосіб доставки:
+									select.input.cart__input(name="delivery")
+										option(value="1") Нова Пошта
+										option(value="2") Кур'єр Нової Пошти
+										option(value="3") Укрпошта
+										option(value="4") Самовивіз
+								label.cart__label
+									.cart__info-text Спосіб оплати:
+									select.input.cart__input(name="payment")
+										option(value="1") Банківський переказ
+										option(value="2") Оплата онлайн
+										option(value="3") Оплата при отриманні
+								label.cart__label
+									.cart__info-text Місто:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="city" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Адреса / № відділення:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="200" name="address" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Коментар:
+									textarea.textarea.cart__textarea(maxlength="2000" name="comment")
+								button.button.button_big.mt-1(type="submit") Швидке замовлення
+							a.cart__registration(href="registration.html")
+								.cart__registration-title Реєстрація / Авторизація
+								.cart__registration-text Зареєструйтеся або авторизуйтеся щоб мати змогу відслідковувати ваші замовлення у особистому кабінеті.
+					.cart__right
+						h3.cart__h3 Ваше замовлення
+						.cart__products
+							.cart__product
+								.cart__img
+									img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
+								.cart__product-info
+									.cart__product-title Кронштейн генератора Євро 2,3 для КамАЗ
+									.cart__product-article Код: 3231106010
+									.cart__product-cost 1300 грн
+								form.form-identification-your-class(method="POST")
+									.cart__controls
+										input(type="hidden" name="id" value="132")
+										.cart__increase
+											i.fa-solid.fa-angle-up
+										input.input.cart__count(type="number" name="count" value="1")
+										.cart__decrease
+											i.fa-solid.fa-angle-down
+								form.form-identification-your-class(method="POST")
+									input(type="hidden" name="id" value="132")
+									button.cart__delete(type="submit")
+										i.fa-solid.fa-xmark
+						.cart__products
+							.cart__product
+								.cart__img
+									img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
+								.cart__product-info
+									.cart__product-title Кронштейн генератора Євро 2,3 для КамАЗ
+									.cart__product-article Код: 3231106010
+									.cart__product-cost 1300 грн
+								form.form-identification-your-class(method="POST")
+									.cart__controls
+										input(type="hidden" name="id" value="132")
+										.cart__increase
+											i.fa-solid.fa-angle-up
+										input.input.cart__count(type="number" name="count" value="1")
+										.cart__decrease
+											i.fa-solid.fa-angle-down
+								form.form-identification-your-class(method="POST")
+									input(type="hidden" name="id" value="132")
+									button.cart__delete(type="submit")
+										i.fa-solid.fa-xmark
+						.cart__products
+							.cart__product
+								.cart__img
+									img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
+								.cart__product-info
+									.cart__product-title Кронштейн генератора Євро 2,3 для КамАЗ
+									.cart__product-article Код: 3231106010
+									.cart__product-cost 1300 грн
+								form.form-identification-your-class(method="POST")
+									.cart__controls
+										input(type="hidden" name="id" value="132")
+										.cart__increase
+											i.fa-solid.fa-angle-up
+										input.input.cart__count(type="number" name="count" value="1")
+										.cart__decrease
+											i.fa-solid.fa-angle-down
+								form.form-identification-your-class(method="POST")
+									input(type="hidden" name="id" value="132")
+									button.cart__delete(type="submit")
+										i.fa-solid.fa-xmark
+						.cart__total
+							.cart__total-text Сумма до сплати: &nbsp;
+							.cart__total-num 1&nbsp;300
+								span.cart__total-currency
+								|
+								| грн
+
+
