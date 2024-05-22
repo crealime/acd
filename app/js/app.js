@@ -24,6 +24,10 @@ window.addEventListener('load', function () {
 	const scrollup = document.querySelector('.scrollup')
 	const filters = document.querySelector('.filters')
 	const filtersTitle = document.querySelector('.filters__title')
+	const cartIncrease = document.querySelectorAll('.cart__increase')
+	const cartDecrease = document.querySelectorAll('.cart__decrease')
+	const cartCount = document.querySelector('.cart__count')
+	
 
 	// Change main margin-top
 	function changeMainMarginTop() {
@@ -417,6 +421,24 @@ rgba(0,0,0,0.9)`,
 			if (filters) filters.classList.toggle('show')
 		})
 	}
+
+	if (cartIncrease) {
+		cartIncrease.forEach(button => {
+			button.addEventListener('click', function (e) {
+				const commonAncestor = button.closest('.cart__controls')
+				const formControlSibling = commonAncestor.querySelector('.cart__count')
+				formControlSibling.value = Number(formControlSibling.value) + 1
+			})
+		})
+	}
+
+	cartDecrease.forEach(button => {
+		button.addEventListener('click', function (e) {
+			const commonAncestor = button.closest('.cart__controls')
+			const formControlSibling = commonAncestor.querySelector('.cart__count')
+			if (formControlSibling.value > 1) formControlSibling.value = Number(formControlSibling.value) - 1
+		})
+	})
 
 })
 

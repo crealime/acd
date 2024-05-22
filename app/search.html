@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Категорії
+		<title>Про нас
 		</title>
 		<meta name="description" content="Опис АвтоСітіДніпро">
 		<link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
@@ -304,156 +304,29 @@
 				</div>
 			</header>
 			<main class="main">
-				<section class="section cart">
+				<section class="section search">
 					<div class="container">
-						<h2 class="cart__h2 text-center">Кошик</h2>
-						<div class="cart__box">
-							<div class="cart__left">
-								<h3 class="cart__h3">Оформлення замовлення</h3>
-								<div class="cart__info">
-									<form class="form-order form-identification-your-class" method="POST">
-										<label class="cart__label">
-											<div class="cart__info-text">
-												Ім'я:
-												<span class="cart__info-required">*</span>
-											</div>
-											<input class="input cart__input" type="text" maxlength="50" name="name" required>
-											<div class="cart__info-error">Це поле заповнене невірно</div>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">
-												Прізвище:
-												<span class="cart__info-required">*</span>
-											</div>
-											<input class="input cart__input" type="text" maxlength="50" name="lastname" required>
-											<div class="cart__info-error">Це поле заповнене невірно</div>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">
-												Телефон:
-												<span class="cart__info-required">*</span>
-											</div>
-											<input class="input cart__input" type="tel" maxlength="50" name="phone" required>
-											<div class="cart__info-error show">Це поле заповнене невірно</div>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">Спосіб доставки:</div>
-											<select class="input cart__input" name="delivery">
-												<option value="1">Нова Пошта</option>
-												<option value="2">Кур'єр Нової Пошти</option>
-												<option value="3">Укрпошта</option>
-												<option value="4">Самовивіз</option>
-											</select>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">Спосіб оплати:</div>
-											<select class="input cart__input" name="payment">
-												<option value="1">Банківський переказ</option>
-												<option value="2">Оплата онлайн</option>
-												<option value="3">Оплата при отриманні</option>
-											</select>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">
-												Місто:
-												<span class="cart__info-required">*</span>
-											</div>
-											<input class="input cart__input" type="text" maxlength="50" name="city" required>
-											<div class="cart__info-error">Це поле заповнене невірно</div>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">
-												Адреса / № відділення:
-												<span class="cart__info-required">*</span>
-											</div>
-											<input class="input cart__input" type="text" maxlength="200" name="address" required>
-											<div class="cart__info-error">Це поле заповнене невірно</div>
-										</label>
-										<label class="cart__label">
-											<div class="cart__info-text">Коментар:</div>
-											<textarea class="textarea cart__textarea" maxlength="2000" name="comment"></textarea>
-										</label>
-										<button class="button button_big mt-1" type="submit">Швидке замовлення</button>
-									</form><a class="cart__registration" href="registration.html">
-										<div class="cart__registration-title">Реєстрація / Авторизація</div>
-										<div class="cart__registration-text">Зареєструйтеся або авторизуйтеся щоб мати змогу відслідковувати ваші замовлення у особистому кабінеті.</div></a>
-								</div>
+						<div class="search__box">
+							<h1 class="search__h1">Пошук</h1>
+							<div class="search__content">
+								<h2><a href="product.html">Камаз</a></h2>
+								<h2><a href="product.html">Двигун Камаз</a></h2>
+								<h2><a href="product.html">Трансмісія</a></h2>
+								<h2><a href="product.html">Фільтри</a></h2>
 							</div>
-							<div class="cart__right">
-								<h3 class="cart__h3">Ваше замовлення</h3>
-								<div class="cart__products">
-									<div class="cart__product">
-										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
-										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
-											<div class="cart__product-article">Код: 3231106010</div>
-											<div class="cart__product-cost">1300 грн</div>
-										</div>
-										<form class="form-identification-your-class" method="POST">
-											<div class="cart__controls">
-												<input type="hidden" name="id" value="132">
-												<div class="cart__increase"><i class="fa-solid fa-angle-up"></i></div>
-												<input class="input cart__count" type="number" name="count" value="1">
-												<div class="cart__decrease"><i class="fa-solid fa-angle-down"></i></div>
-											</div>
-										</form>
-										<form class="form-identification-your-class" method="POST">
-											<input type="hidden" name="id" value="132">
-											<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
-										</form>
-									</div>
-								</div>
-								<div class="cart__products">
-									<div class="cart__product">
-										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
-										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
-											<div class="cart__product-article">Код: 3231106010</div>
-											<div class="cart__product-cost">1300 грн</div>
-										</div>
-										<form class="form-identification-your-class" method="POST">
-											<div class="cart__controls">
-												<input type="hidden" name="id" value="132">
-												<div class="cart__increase"><i class="fa-solid fa-angle-up"></i></div>
-												<input class="input cart__count" type="number" name="count" value="1">
-												<div class="cart__decrease"><i class="fa-solid fa-angle-down"></i></div>
-											</div>
-										</form>
-										<form class="form-identification-your-class" method="POST">
-											<input type="hidden" name="id" value="132">
-											<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
-										</form>
-									</div>
-								</div>
-								<div class="cart__products">
-									<div class="cart__product">
-										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
-										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
-											<div class="cart__product-article">Код: 3231106010</div>
-											<div class="cart__product-cost">1300 грн</div>
-										</div>
-										<form class="form-identification-your-class" method="POST">
-											<div class="cart__controls">
-												<input type="hidden" name="id" value="132">
-												<div class="cart__increase"><i class="fa-solid fa-angle-up"></i></div>
-												<input class="input cart__count" type="number" name="count" value="1">
-												<div class="cart__decrease"><i class="fa-solid fa-angle-down"></i></div>
-											</div>
-										</form>
-										<form class="form-identification-your-class" method="POST">
-											<input type="hidden" name="id" value="132">
-											<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
-										</form>
-									</div>
-								</div>
-								<div class="cart__total">
-									<div class="cart__total-text">Сумма до сплати: &nbsp;</div>
-									<div class="cart__total-num">1&nbsp;300<span class="cart__total-currency"></span>
-										грн
-									</div>
-								</div>
-							</div>
+						</div>
+						<div class="pagination">
+							<nav>
+								<ul>
+									<li><a class="button disabled" href="#">Перша</a></li>
+									<li><a class="button disabled" href="#">«</a></li>
+									<li><a class="button active" href="#">1</a></li>
+									<li><a class="button" href="#">2</a></li>
+									<li><a class="button" href="#">3</a></li>
+									<li><a class="button" href="#">»</a></li>
+									<li><a class="button" href="#">Остання</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
 				</section>

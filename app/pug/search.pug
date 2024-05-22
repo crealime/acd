@@ -1,0 +1,39 @@
+extends includes/_template
+
+block title
+	| Про нас
+
+block main
+	main.main
+		section.section.search
+			.container
+				.search__box
+					h1.search__h1 Пошук
+					.search__content
+						h2
+							a(href="product.html") Камаз
+						h2
+							a(href="product.html") Двигун Камаз
+						h2
+							a(href="product.html") Трансмісія
+						h2
+							a(href="product.html") Фільтри
+				.pagination
+					nav
+						ul
+							li
+								a.button.disabled(href="#") Перша
+							li
+								a.button.disabled(href="#") «
+							li
+								a.button.active(href="#") 1
+							li
+								a.button(href="#") 2
+							li
+								a.button(href="#") 3
+							li
+								a.button(href="#") »
+							li
+								a.button(href="#") Остання
+
+
