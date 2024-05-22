@@ -1673,14 +1673,16 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__box
 		margin: rem(40) 0 rem(50)
 
-	&__h1
+	&__h2
 		text-transform: uppercase
+		text-align: center
 
 .category
 	margin: rem(60) 0
 
 	&__h2
 		text-transform: uppercase
+		text-align: center
 
 	&__box
 		display: flex
@@ -1947,4 +1949,27 @@ button:hover, .button:hover, button:focus, .button:focus
 .search
 	margin: rem(60) 0
 
-	&.search__
+	&__h2
+		text-transform: uppercase
+		text-align: center
+
+.registration
+	margin: rem(60) 0
+
+	&__h2
+		text-transform: uppercase
+		text-align: center
+
+	&__h3
+		font-size: 20px
+		font-weight: 600
+
+	&__box
+		display: flex
+		gap: 50px
+
+		@include media(700)
+			flex-direction: column
+
+	&__left, &__right
+		width: 100%

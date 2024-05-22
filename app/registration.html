@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Про нас
+		<title>Реєстрація
 		</title>
 		<meta name="description" content="Опис АвтоСітіДніпро">
 		<link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
@@ -304,37 +304,159 @@
 				</div>
 			</header>
 			<main class="main">
-				<div class="container">
-					<nav class="breadcrumbs">
-						<ul>
-							<li><a href="#">Головна</a></li>
-							<li>Про нас</li>
-						</ul>
-					</nav>
-				</div>
-				<article class="page">
+				<section class="section registration">
 					<div class="container">
-						<div class="page__box">
-							<h2 class="page__h2">Про нас</h2>
-							<div class="page__content">
-								<h3>Інформація про компанію</h3>
-								<div><b>Назва:</b>
-									Автосіті Дніпро
+						<h2 class="registration__h2">Реєстрація</h2>
+						<div class="registration__box">
+							<div class="registration__left">
+								<h3 class="registration__h3 mb-3">Реєстрація приватної особи</h3>
+								<div class="registration__info">
+									<form class="form-registration form-identification-your-class" method="POST">
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Ім'я:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="name" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Прізвище:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="lastname" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Телефон:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="tel" maxlength="50" name="phone" required>
+											<div class="cart__info-error show">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												E-mail:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="email" maxlength="100" name="email" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Місто:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="city" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Адреса / № відділення:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="200" name="address" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<div class="mt-4"></div>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Пароль:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="password" maxlength="200" name="password" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Підтвердження пароля:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="password" maxlength="200" name="confirm" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<button class="button button_big mt-4" type="submit">Зареєструватися</button>
+									</form>
 								</div>
-								<div><b>Тип компанії:</b>
-									Торгова компанія, Представництво
-								</div>
-								<h3>Організаційно-правова форма та капітал</h3>
-								<div><b>Рік заснування:</b>
-									2013
-								</div>
-								<div><b>Організаційно-правова форма:</b>
-									Товариство з обмеженою відповідальністю
+							</div>
+							<div class="registration__right">
+								<h3 class="registration__h3 mb-3">Реєстрація юридичної особи або ФОП</h3>
+								<div class="registration__info">
+									<form class="form-registration form-identification-your-class" method="POST">
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Назва:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="name" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												ЄДРПОУ:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="lastname" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Телефон:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="tel" maxlength="50" name="phone" required>
+											<div class="cart__info-error show">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												E-mail:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="email" maxlength="100" name="email" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Місто:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="50" name="city" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Адреса / № відділення:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="text" maxlength="200" name="address" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<div class="mt-4"></div>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Пароль:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="password" maxlength="200" name="password" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<label class="cart__label">
+											<div class="cart__info-text">
+												Підтвердження пароля:
+												<span class="cart__info-required">*</span>
+											</div>
+											<input class="input cart__input" type="password" maxlength="200" name="confirm" required>
+											<div class="cart__info-error">Це поле заповнене невірно</div>
+										</label>
+										<button class="button button_big mt-4" type="submit">Зареєструватися</button>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-				</article>
+				</section>
 			</main>
 			<footer class="footer">
 				<div class="container">

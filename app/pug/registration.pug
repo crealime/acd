@@ -1,0 +1,135 @@
+extends includes/_template
+
+block title
+	| Реєстрація
+
+block main
+	main.main
+		section.section.registration
+			.container
+				h2.registration__h2 Реєстрація
+				.registration__box
+					.registration__left
+						h3.registration__h3.mb-3 Реєстрація приватної особи
+						.registration__info
+							form.form-registration.form-identification-your-class(method="POST")
+								label.cart__label
+									.cart__info-text Ім'я:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="name" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Прізвище:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="lastname" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Телефон:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="tel" maxlength="50" name="phone" required)
+									.cart__info-error.show Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text E-mail:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="email" maxlength="100" name="email" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Місто:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="city" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Адреса / № відділення:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="200" name="address" required)
+									.cart__info-error Це поле заповнене невірно
+								.mt-4
+								label.cart__label
+									.cart__info-text Пароль:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="password" maxlength="200" name="password" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Підтвердження пароля:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="password" maxlength="200" name="confirm" required)
+									.cart__info-error Це поле заповнене невірно
+								button.button.button_big.mt-4(type="submit") Зареєструватися
+					.registration__right
+						h3.registration__h3.mb-3 Реєстрація юридичної особи або ФОП
+						.registration__info
+							form.form-registration.form-identification-your-class(method="POST")
+								label.cart__label
+									.cart__info-text Назва:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="name" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text ЄДРПОУ:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="lastname" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Телефон:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="tel" maxlength="50" name="phone" required)
+									.cart__info-error.show Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text E-mail:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="email" maxlength="100" name="email" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Місто:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="50" name="city" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Адреса / № відділення:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="text" maxlength="200" name="address" required)
+									.cart__info-error Це поле заповнене невірно
+								.mt-4
+								label.cart__label
+									.cart__info-text Пароль:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="password" maxlength="200" name="password" required)
+									.cart__info-error Це поле заповнене невірно
+								label.cart__label
+									.cart__info-text Підтвердження пароля:
+										|
+										|
+										span.cart__info-required *
+									input.input.cart__input(type="password" maxlength="200" name="confirm" required)
+									.cart__info-error Це поле заповнене невірно
+								button.button.button_big.mt-4(type="submit") Зареєструватися
