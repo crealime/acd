@@ -1397,7 +1397,7 @@ button:hover, .button:hover, button:focus, .button:focus
 		margin-bottom: 30px
 
 		@include media(720)
-			justify-content: flex-start
+			flex-direction: column
 
 	&__sort-text
 		font-weight: 600
@@ -1703,13 +1703,16 @@ button:hover, .button:hover, button:focus, .button:focus
 	overflow: hidden
 	
 	@include media(720)
-		width: 100%
+		max-width: 100%
 		height: 45px
 
 	&__title
 		font-size: rem(20)
 		font-weight: 600
 		margin: 10px auto 20px
+
+		@include media(720)
+			text-align: center
 		
 		a
 			font-size: rem(20)
@@ -1752,6 +1755,11 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__button
 		margin-top: 20px
 		margin-right: 10px
+
+		@include media(720)
+			display: block
+			margin-left: auto
+			margin-right: auto
 
 .filters.show
 	height: auto

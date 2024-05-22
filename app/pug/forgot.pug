@@ -1,0 +1,20 @@
+extends includes/_template
+
+block title
+	| Відновлення пароля
+
+block main
+	main.main
+		section.section.authorization
+			.container
+				h2.authorization__h2 Відновлення пароля
+				.authorization__box
+					form.form-forgot.form-identification-your-class(method="POST")
+						label.cart__label
+							.cart__info-text E-mail:
+								|
+								|
+								span.cart__info-required *
+							input.input.cart__input(type="email" maxlength="100" name="email" required)
+							.cart__info-error Це поле заповнене невірно
+						button.button.button_big.mt-3(type="submit") Нагадати пароль

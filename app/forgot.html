@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: https://ogp.me/ns#">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Відновлення пароля
+		</title>
+		<meta name="description" content="Опис АвтоСітіДніпро">
+		<link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
+		<link rel="icon" href="img/favicon/favicon-192.png" sizes="192x192">
+		<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-180.png">
+		<meta name="msapplication-TileImage" content="img/favicon/favicon-270.png">
+		<meta property="og:title" content="&gt;АвтоСітіДніпро">
+		<meta property="og:description" content="Опис АвтоСітіДніпро">
+		<meta property="og:url" content="/">
+		<meta property="og:image" content="img/tmp/slider_001.jpg">
+		<link rel="image_src" href="img/favicon/favicon-270.png">
+		<link href="css/libs.min.css" rel="stylesheet" type="text/css">
+		<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css">
+		<link href="css/app.min.css" rel="stylesheet" type="text/css">
+		<script src="js/libs.min.js" defer></script>
+		<script src="js/app.min.js" defer></script>
+		<script src="js/forms.js" defer></script>
+		<meta name="theme-color" content="#1B2354">
+	</head>
+	<body>
+		<div class="popup d-none">
+			<div class="popup__close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
+			<div class="popup__box">
+				<!--.mini-cart-->
+				<!--	h3.mini-cart__title Товари в кошику-->
+			</div>
+		</div>
+		<div class="d-none" id="callback">
+			<div class="popup-content">
+				<div class="callback">
+					<form class="form-ajax form-identification-your-class" method="POST">
+						<input type="hidden" name="admin_email" value="creaslippers@gmail.com">
+						<input type="hidden" name="from_email" value="admin@site.com">
+						<input type="hidden" name="project_name" value="АвтоСітіДніпро">
+						<input type="hidden" name="form_subject" value="Запит зворотного дзвінка">
+						<input type="hidden" name="сool" value="Запит відправлено!">
+						<input type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом">
+						<input type="hidden" name="bad" value="Сталася помилка!">
+						<input type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.">
+						<div class="callback__heading">Зворотний дзвінок</div>
+						<input class="callback__input" type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required>
+						<input class="callback__input" type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required>
+						<button class="callback__button button_big">Відправити</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="warning d-none">
+			<div class="warning__back">
+				<div class="warning__text">Взаємодіючи з сайтом, ви погоджуєтесь з <a class="warning__link popup-click" href="policy">політикою конфіденційності</a>.</div>
+				<div class="warning__close"></div>
+			</div>
+		</div>
+		<div class="scrollup scrollup_hide d-none"><i class="fa-solid fa-circle-up"></i></div>
+		<div class="wrapper">
+			<div class="overlay"></div>
+			<header class="header">
+				<div class="container">
+					<div class="header__box">
+						<div class="header__left">
+							<h1 class="header__logo"><a class="header__logo-link" href="index.html"><span class="header__logo-text">АвтоСітіДніпро</span><img class="header__logo-img" src="img/logo/logo.svg" alt="АвтоСітіДніпро"></a></h1>
+						</div>
+						<div class="header__center">
+							<div class="header__info">
+								<div class="header__infoblock header__infoblock_1"><a class="header__tel-0800" href="tel:0800331330">0 (800) 33-13-30</a>
+									<div class="header__tel-0800-text">Безкоштовно по Україні</div>
+								</div>
+								<div class="header__infoblock header__infoblock_2"><a class="header__tel" href="tel:+380506310130">+38 (050) 631-01-30</a><a class="header__tel" href="tel:+380988828177">+38 (098) 882-81-77</a></div>
+								<div class="header__infoblock header__infoblock_3"><a class="header__address" href="https://maps.app.goo.gl/m4xm4G2kBT5NWeCH6" target="_blank">Дніпро, пр. Богдана Хмельницького, 47</a></div>
+								<div class="header__infoblock header__infoblock_4"><a class="header__link" href="#">Підбір Запчастин</a><a class="header__link popup-call" href="#callback">Зворотній дзвінок</a></div>
+							</div>
+							<div class="header__menu-box">
+								<div class="header__menu">
+									<nav class="header__catalog"><a class="button header__catalog-button" href="#"><i class="fa-solid fa-grip"></i>Каталог</a>
+										<div class="header__li-expand"><i class="fa-solid fa-chevron-right"></i></div>
+										<ul>
+											<li><a href="categories.html">Камаз</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Маз</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Зил</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Газон</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Краз</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Урал</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Газель</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Вантажна іномарка</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Уаз</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Легкова іномарка</a>
+												<ul>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Легкова СНД</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+													<li><a href="category.html">Підвіска</a></li>
+													<li><a href="category.html">Колеса та ступиці</a></li>
+													<li><a href="category.html">Рульове управління</a></li>
+													<li><a href="category.html">Гальмівна система</a></li>
+													<li><a href="category.html">Електрообладнання</a></li>
+													<li><a href="category.html">Система охолодження</a></li>
+													<li><a href="category.html">Зчеплення</a></li>
+													<li><a href="category.html">Роздавальна коробка</a></li>
+												</ul>
+											</li>
+											<li><a href="categories.html">Автобуси</a>
+												<ul>
+													<li><a href="category.html">Двигун</a></li>
+													<li><a href="category.html">Система живлення</a></li>
+													<li><a href="category.html">Система випуску газів</a></li>
+													<li><a href="category.html">КПП</a></li>
+													<li><a href="category.html">Вали карданні</a></li>
+													<li><a href="category.html">Міст задній</a></li>
+												</ul>
+											</li>
+										</ul>
+									</nav>
+									<nav class="header__top-menu">
+										<ul>
+											<li><a href="about.html">Про нас</a></li>
+											<li><a href="#">Оплата – Доставка</a></li>
+											<li><a href="#">Контакти</a></li>
+										</ul>
+									</nav>
+									<form class="header__search-form" action="search.html" method="get">
+										<input class="header__search-input" type="text" placeholder="Пошук..." name="search" id="search">
+										<button class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+									</form><a class="button header__login" href="login.html"><i class="fa-solid fa-user"></i>Увійти</a><a class="button header__cart" href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="header__cart-text">Кошик</span><span class="header__cart-counter">0</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="header__right">
+							<div class="header__burger"><i class="fa-solid fa-xmark d-none"></i><i class="fa-solid fa-bars"></i></div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<section class="section authorization">
+					<div class="container">
+						<h2 class="authorization__h2">Відновлення пароля</h2>
+						<div class="authorization__box">
+							<form class="form-forgot form-identification-your-class" method="POST">
+								<label class="cart__label">
+									<div class="cart__info-text">
+										E-mail:
+										<span class="cart__info-required">*</span>
+									</div>
+									<input class="input cart__input" type="email" maxlength="100" name="email" required>
+									<div class="cart__info-error">Це поле заповнене невірно</div>
+								</label>
+								<button class="button button_big mt-3" type="submit">Нагадати пароль</button>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__box">
+						<div class="footer__item">
+							<div class="footer__title">Каталог запчастин</div>
+							<nav class="footer__nav">
+								<ul>
+									<li><a href="#">Камаз</a></li>
+									<li><a href="#">Урал</a></li>
+									<li><a href="#">ЯМЗ</a></li>
+									<li><a href="#">Автоаксесуари</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Інформація</div>
+							<nav class="footer__nav">
+								<ul>
+									<li><a href="#">Про нас</a></li>
+									<li><a href="#">Оплата – Доставка</a></li>
+									<li><a href="#">Контакти</a></li>
+									<li><a href="#">Політика конфіденційності та договірних пропозицій</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Зв’язок з нами</div>
+							<div class="footer__infoblock"><a class="header__tel-0800" href="tel:0800331330">0 (800) 33-13-30</a>
+								<div class="header__tel-0800-text">Безкоштовно по Україні</div>
+							</div>
+							<div class="footer__infoblock"><a class="header__tel" href="tel:+380506310130">+38 (050) 631-01-30</a><a class="header__tel" href="tel:+380988828177">+38 (098) 882-81-77</a></div>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Приєднуйтесь
+								<div class="footer__social"><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
