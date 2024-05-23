@@ -27,7 +27,11 @@ window.addEventListener('load', function () {
 	const cartIncrease = document.querySelectorAll('.cart__increase')
 	const cartDecrease = document.querySelectorAll('.cart__decrease')
 	const cartCount = document.querySelector('.cart__count')
-	
+	const linkTabs = document.querySelectorAll('.link-tab')
+	const tabs = document.querySelectorAll('.tab')
+	const ordersItem = document.querySelectorAll('.orders__item')
+	const ordersHeader = document.querySelectorAll('.orders__header')
+
 
 	// Change main margin-top
 	function changeMainMarginTop() {
@@ -439,6 +443,30 @@ rgba(0,0,0,0.9)`,
 			if (formControlSibling.value > 1) formControlSibling.value = Number(formControlSibling.value) - 1
 		})
 	})
+
+	if (linkTabs) {
+		linkTabs.forEach(link => {
+			link.addEventListener('click', function(e) {
+				e.preventDefault()
+				const id = this.href.split('#').pop()
+				tabs.forEach(tab => {
+					tab.classList.add('d-none')
+				})
+				const tab = document.getElementById(id)
+				tab.classList.remove('d-none')
+				tab.scrollIntoView({ behavior: 'smooth' })
+			})
+		})
+	}
+
+	if (ordersHeader) {
+		ordersHeader.forEach(header => {
+			header.addEventListener('click', function(e) {
+				this.closest('.orders__item').classList.toggle('show')
+				this.querySelector('.orders__open').classList.toggle('show')
+			})
+		})
+	}
 
 })
 

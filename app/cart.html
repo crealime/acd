@@ -20,16 +20,70 @@
 		<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css">
 		<link href="css/app.min.css" rel="stylesheet" type="text/css">
 		<script src="js/libs.min.js" defer></script>
-		<script src="js/app.min.js" defer></script>
+		<script src="js/app.js" defer></script>
 		<script src="js/forms.js" defer></script>
 		<meta name="theme-color" content="#1B2354">
 	</head>
 	<body>
 		<div class="popup d-none">
 			<div class="popup__close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
-			<div class="popup__box">
-				<!--.mini-cart-->
-				<!--	h3.mini-cart__title Товари в кошику-->
+			<div class="popup__box"></div>
+		</div>
+		<div id="mini-cart">
+			<div class="popup-content">
+				<div class="mini-cart">
+					<div class="mini-cart__header">Товари в кошику</div>
+					<div class="mini-cart__content">
+						<div class="cart__products">
+							<div class="cart__product">
+								<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
+								<div class="cart__product-info">
+									<div class="cart__product-title"><a class="cart__product-link" href="product.html">Кронштейн генератора Євро 2,3 для КамАЗ</a></div>
+									<div class="cart__product-article">Код: 3231106010</div>
+									<div class="cart__product-cost">1300 грн</div>
+								</div>
+								<form class="form-identification-your-class" method="POST">
+									<div class="cart__controls">
+										<input type="hidden" name="id" value="132">
+										<div class="cart__increase"><i class="fa-solid fa-angle-up"></i></div>
+										<input class="input cart__count" type="number" name="count" value="1">
+										<div class="cart__decrease"><i class="fa-solid fa-angle-down"></i></div>
+									</div>
+								</form>
+								<form class="form-identification-your-class" method="POST">
+									<input type="hidden" name="id" value="132">
+									<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
+								</form>
+							</div>
+							<div class="cart__product">
+								<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
+								<div class="cart__product-info">
+									<div class="cart__product-title"><a class="cart__product-link" href="product.html">Кронштейн генератора Євро 2,3 для КамАЗ</a></div>
+									<div class="cart__product-article">Код: 3231106010</div>
+									<div class="cart__product-cost">1300 грн</div>
+								</div>
+								<form class="form-identification-your-class" method="POST">
+									<div class="cart__controls">
+										<input type="hidden" name="id" value="132">
+										<div class="cart__increase"><i class="fa-solid fa-angle-up"></i></div>
+										<input class="input cart__count" type="number" name="count" value="1">
+										<div class="cart__decrease"><i class="fa-solid fa-angle-down"></i></div>
+									</div>
+								</form>
+								<form class="form-identification-your-class" method="POST">
+									<input type="hidden" name="id" value="132">
+									<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="mini-cart__footer">
+						<div class="mini-cart__total">
+							1300
+							<span class="mini-cart__currency">грн</span>
+						</div><a class="button button_blue button_big" href="#"></a><a class="button button_big" href="cart.html"></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="d-none" id="callback">
@@ -290,10 +344,12 @@
 											<li><a href="#">Контакти</a></li>
 										</ul>
 									</nav>
-									<form class="header__search-form" action="search.html" method="get">
-										<input class="header__search-input" type="text" placeholder="Пошук..." name="search" id="search">
-										<button class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-									</form><a class="button header__login" href="login.html"><i class="fa-solid fa-user"></i>Увійти</a><a class="button header__cart" href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="header__cart-text">Кошик</span><span class="header__cart-counter">0</span></a>
+									<div class="header__search-form">
+										<form class="form-search" action="search.html" method="GET">
+											<input class="header__search-input" type="text" placeholder="Пошук..." name="search" id="search">
+											<button class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+										</form>
+									</div><a class="button header__login" href="cabinet.html"><i class="fa-solid fa-user"></i>Профіль</a><a class="button header__cart" href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="header__cart-text">Кошик</span><span class="header__cart-counter">0</span></a>
 								</div>
 							</div>
 						</div>
@@ -385,7 +441,7 @@
 									<div class="cart__product">
 										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
 										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
+											<div class="cart__product-title"><a class="cart__product-link" href="product.html"></a><a class="cart__product-link" href="product.html">Кронштейн генератора Євро 2,3 для КамАЗ</a></div>
 											<div class="cart__product-article">Код: 3231106010</div>
 											<div class="cart__product-cost">1300 грн</div>
 										</div>
@@ -402,12 +458,10 @@
 											<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
 										</form>
 									</div>
-								</div>
-								<div class="cart__products">
 									<div class="cart__product">
 										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
 										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
+											<div class="cart__product-title"><a class="cart__product-link" href="product.html">Кронштейн генератора Євро 2,3 для КамАЗ</a></div>
 											<div class="cart__product-article">Код: 3231106010</div>
 											<div class="cart__product-cost">1300 грн</div>
 										</div>
@@ -424,12 +478,10 @@
 											<button class="cart__delete" type="submit"><i class="fa-solid fa-xmark"></i></button>
 										</form>
 									</div>
-								</div>
-								<div class="cart__products">
 									<div class="cart__product">
 										<div class="cart__img"><img src="img/tmp/prod_1.jpeg" alt="" loading="lazy"></div>
 										<div class="cart__product-info">
-											<div class="cart__product-title">Кронштейн генератора Євро 2,3 для КамАЗ</div>
+											<div class="cart__product-title"><a class="cart__product-link" href="product.html">Кронштейн генератора Євро 2,3 для КамАЗ</a></div>
 											<div class="cart__product-article">Код: 3231106010</div>
 											<div class="cart__product-cost">1300 грн</div>
 										</div>

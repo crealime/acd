@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Пошук
+		<title>Особистий кабінет
 		</title>
 		<meta name="description" content="Опис АвтоСітіДніпро">
 		<link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
@@ -360,41 +360,285 @@
 				</div>
 			</header>
 			<main class="main">
-				<section class="section search">
+				<section class="section cabinet">
 					<div class="container">
-						<div class="search__box">
-							<h2 class="search__h2">Результати пошуку</h2>
-							<div class="search__content">
-								<h3>
-									1.
-									<a href="product.html">Камаз</a>
-								</h3>
-								<h3>
-									2.
-									<a href="product.html">Двигун Камаз</a>
-								</h3>
-								<h3>
-									3.
-									<a href="product.html">Трансмісія</a>
-								</h3>
-								<h3>
-									4.
-									<a href="product.html">Фільтри</a>
-								</h3>
+						<h2 class="cabinet__h2">Особистий кабінет</h2>
+						<div class="cabinet__box">
+							<div class="cabinet__left">
+								<div class="cabinet__user">
+									<div class="cabinet__user-icon"><i class="fa-solid fa-user"></i></div>
+									<div class="cabinet__user-info">
+										<div class="cabinet__user-name">Петро Дорошенко</div>
+										<div class="cabinet__user-mail">doroshenko1627@gmail.com</div>
+									</div>
+								</div>
+								<div class="cabinet__links-box"><a class="cabinet__link link-tab" href="#orders-list">Список замовлень</a><a class="cabinet__link link-tab" href="#user-data">Особисті дані</a><a class="cabinet__link" href="logout.html">Вийти</a></div>
 							</div>
-						</div>
-						<div class="pagination">
-							<nav>
-								<ul>
-									<li><a class="button disabled" href="#">Перша</a></li>
-									<li><a class="button disabled" href="#">«</a></li>
-									<li><a class="button active" href="#">1</a></li>
-									<li><a class="button" href="#">2</a></li>
-									<li><a class="button" href="#">3</a></li>
-									<li><a class="button" href="#">»</a></li>
-									<li><a class="button" href="#">Остання</a></li>
-								</ul>
-							</nav>
+							<div class="cabinet__right">
+								<div class="tab cabinet__orders-list" id="orders-list">
+									<div class="cabinet__title-box">
+										<h3 class="cabinet__h3">Список замовлень</h3>
+										<div class="cabinet__search">
+											<form class="cabinet__search-form" method="GET">
+												<input class="cabinet__search-input" type="date" placeholder="Пошук по даті..." name="date" id="orders-search">
+												<button class="cabinet__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+											</form>
+										</div>
+									</div>
+									<div class="orders">
+										<div class="orders__item">
+											<div class="orders__header">
+												<div class="orders__header-left">
+													<div class="orders__number">№ 651357455</div>
+													<div class="orders__date">17.04.2024</div>
+													<div class="orders__status">Виконано</div>
+													<div class="orders__total">
+														1300
+														<span class="orders__currency">грн</span>
+													</div>
+												</div>
+												<div class="orders__header-right">
+													<div class="orders__open"><i class="fa-solid fa-angle-down"></i></div>
+												</div>
+											</div>
+											<div class="orders__content">
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Доставка</div>
+														<div class="orders__info-value">Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47</div>
+													</div>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Рахунок фактура</div>
+														<div class="orders__info-value">AP77-00166597</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Видаткова накладна</div>
+														<div class="orders__info-value">3841684839</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Податкова накладна</div>
+														<div class="orders__info-value">31842684687</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="orders__item">
+											<div class="orders__header">
+												<div class="orders__header-left">
+													<div class="orders__number">№ 651357455</div>
+													<div class="orders__date">17.04.2024</div>
+													<div class="orders__status">Виконано</div>
+													<div class="orders__total">
+														1300
+														<span class="orders__currency">грн</span>
+													</div>
+												</div>
+												<div class="orders__header-right">
+													<div class="orders__open"><i class="fa-solid fa-angle-down"></i></div>
+												</div>
+											</div>
+											<div class="orders__content">
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Доставка</div>
+														<div class="orders__info-value">Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47</div>
+													</div>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Рахунок фактура</div>
+														<div class="orders__info-value">AP77-00166597</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Видаткова накладна</div>
+														<div class="orders__info-value">3841684839</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Податкова накладна</div>
+														<div class="orders__info-value">31842684687</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="orders__item">
+											<div class="orders__header">
+												<div class="orders__header-left">
+													<div class="orders__number">№ 651357455</div>
+													<div class="orders__date">17.04.2024</div>
+													<div class="orders__status">Виконано</div>
+													<div class="orders__total">
+														1300
+														<span class="orders__currency">грн</span>
+													</div>
+												</div>
+												<div class="orders__header-right">
+													<div class="orders__open"><i class="fa-solid fa-angle-down"></i></div>
+												</div>
+											</div>
+											<div class="orders__content">
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Доставка</div>
+														<div class="orders__info-value">Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47</div>
+													</div>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Рахунок фактура</div>
+														<div class="orders__info-value">AP77-00166597</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Видаткова накладна</div>
+														<div class="orders__info-value">3841684839</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Податкова накладна</div>
+														<div class="orders__info-value">31842684687</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="orders__item">
+											<div class="orders__header">
+												<div class="orders__header-left">
+													<div class="orders__number">№ 651357455</div>
+													<div class="orders__date">17.04.2024</div>
+													<div class="orders__status">Виконано</div>
+													<div class="orders__total">
+														1300
+														<span class="orders__currency">грн</span>
+													</div>
+												</div>
+												<div class="orders__header-right">
+													<div class="orders__open"><i class="fa-solid fa-angle-down"></i></div>
+												</div>
+											</div>
+											<div class="orders__content">
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Доставка</div>
+														<div class="orders__info-value">Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47</div>
+													</div>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Рахунок фактура</div>
+														<div class="orders__info-value">AP77-00166597</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Видаткова накладна</div>
+														<div class="orders__info-value">3841684839</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+												<div class="orders__info-item">
+													<div class="orders__info-item-box">
+														<div class="orders__info-name">Податкова накладна</div>
+														<div class="orders__info-value">31842684687</div>
+													</div><a class="orders__button" href="file.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="pagination">
+										<nav>
+											<ul>
+												<li><a class="button disabled" href="#">Перша</a></li>
+												<li><a class="button disabled" href="#">«</a></li>
+												<li><a class="button active" href="#">1</a></li>
+												<li><a class="button" href="#">2</a></li>
+												<li><a class="button" href="#">3</a></li>
+												<li><a class="button" href="#">»</a></li>
+												<li><a class="button" href="#">Остання</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="tab cabinet__user-data d-none" id="user-data">
+									<div class="cabinet__title-box">
+										<h3 class="cabinet__h3">Особисті дані</h3>
+									</div>
+									<div class="data-edit__info">
+										<form class="form-data-edit form-identification-your-class" method="POST">
+											<label class="cart__label">
+												<div class="cart__info-text">
+													Ім'я:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="text" maxlength="50" name="name" required>
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">
+													Прізвище:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="text" maxlength="50" name="lastname" required>
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">
+													Телефон:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="tel" maxlength="50" name="phone" required>
+												<div class="cart__info-error show">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">
+													E-mail:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="email" maxlength="100" name="email" required>
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">Місто:</div>
+												<input class="input cart__input" type="text" maxlength="50" name="city">
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">Адреса / № відділення:</div>
+												<input class="input cart__input" type="text" maxlength="200" name="address">
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<div class="mt-4"></div>
+											<label class="cart__label">
+												<div class="cart__info-text">
+													Пароль:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="password" maxlength="200" name="password" required>
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<label class="cart__label">
+												<div class="cart__info-text">
+													Підтвердження пароля:
+													<span class="cart__info-required">*</span>
+												</div>
+												<input class="input cart__input" type="password" maxlength="200" name="confirm" required>
+												<div class="cart__info-error">Це поле заповнене невірно</div>
+											</label>
+											<button class="button button_big mt-4" type="submit">Змінити</button>
+										</form>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>

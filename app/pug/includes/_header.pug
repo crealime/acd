@@ -389,13 +389,14 @@ header.header
 									a(href="#") Оплата – Доставка
 								li
 									a(href="#") Контакти
-						form.header__search-form(action="search.html" method="get")
-							input.header__search-input(type="text" placeholder="Пошук..." name="search" id="search")
-							button.header__search-button
-								i.fa-solid.fa-magnifying-glass
-						a.button.header__login(href="login.html")
+						.header__search-form
+							form.form-search(action="search.html" method="GET")
+								input.header__search-input(type="text" placeholder="Пошук..." name="search" id="search")
+								button.header__search-button
+									i.fa-solid.fa-magnifying-glass
+						a.button.header__login(href="cabinet.html")
 							i.fa-solid.fa-user
-							| Увійти
+							| Профіль
 						a.button.header__cart(href="cart.html")
 							i.fa-solid.fa-cart-shopping
 							span.header__cart-text Кошик

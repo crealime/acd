@@ -1,0 +1,253 @@
+extends includes/_template
+
+block title
+	| Особистий кабінет
+
+block main
+	main.main
+		section.section.cabinet
+			.container
+				h2.cabinet__h2 Особистий кабінет
+				.cabinet__box
+					.cabinet__left
+						.cabinet__user
+							.cabinet__user-icon
+								i.fa-solid.fa-user
+							.cabinet__user-info
+								.cabinet__user-name Петро Дорошенко
+								.cabinet__user-mail doroshenko1627@gmail.com
+						.cabinet__links-box
+							a.cabinet__link.link-tab(href="#orders-list") Список замовлень
+							a.cabinet__link.link-tab(href="#user-data") Особисті дані
+							a.cabinet__link(href="logout.html") Вийти
+					.cabinet__right
+						#orders-list.tab.cabinet__orders-list
+							.cabinet__title-box
+								h3.cabinet__h3 Список замовлень
+								.cabinet__search
+									form.cabinet__search-form(method="GET")
+										input.cabinet__search-input(type="date" placeholder="Пошук по даті..." name="date" id="orders-search")
+										button.cabinet__search-button
+											i.fa-solid.fa-magnifying-glass
+							.orders
+								.orders__item
+									.orders__header
+										.orders__header-left
+											.orders__number № 651357455
+											.orders__date 17.04.2024
+											.orders__status Виконано
+											.orders__total 1300
+												|
+												|
+												span.orders__currency грн
+										.orders__header-right
+											.orders__open
+												i.fa-solid.fa-angle-down
+									.orders__content
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Доставка
+												.orders__info-value Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Рахунок фактура
+												.orders__info-value AP77-00166597
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Видаткова накладна
+												.orders__info-value 3841684839
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Податкова накладна
+												.orders__info-value 31842684687
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+								.orders__item
+									.orders__header
+										.orders__header-left
+											.orders__number № 651357455
+											.orders__date 17.04.2024
+											.orders__status Виконано
+											.orders__total 1300
+												|
+												|
+												span.orders__currency грн
+										.orders__header-right
+											.orders__open
+												i.fa-solid.fa-angle-down
+									.orders__content
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Доставка
+												.orders__info-value Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Рахунок фактура
+												.orders__info-value AP77-00166597
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Видаткова накладна
+												.orders__info-value 3841684839
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Податкова накладна
+												.orders__info-value 31842684687
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+								.orders__item
+									.orders__header
+										.orders__header-left
+											.orders__number № 651357455
+											.orders__date 17.04.2024
+											.orders__status Виконано
+											.orders__total 1300
+												|
+												|
+												span.orders__currency грн
+										.orders__header-right
+											.orders__open
+												i.fa-solid.fa-angle-down
+									.orders__content
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Доставка
+												.orders__info-value Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Рахунок фактура
+												.orders__info-value AP77-00166597
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Видаткова накладна
+												.orders__info-value 3841684839
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Податкова накладна
+												.orders__info-value 31842684687
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+								.orders__item
+									.orders__header
+										.orders__header-left
+											.orders__number № 651357455
+											.orders__date 17.04.2024
+											.orders__status Виконано
+											.orders__total 1300
+												|
+												|
+												span.orders__currency грн
+										.orders__header-right
+											.orders__open
+												i.fa-solid.fa-angle-down
+									.orders__content
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Доставка
+												.orders__info-value Нова Пошта, Дніпро, Дніпропетровська обл., просп. Б. Хмельницкого, буд. 47
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Рахунок фактура
+												.orders__info-value AP77-00166597
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Видаткова накладна
+												.orders__info-value 3841684839
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+										.orders__info-item
+											.orders__info-item-box
+												.orders__info-name Податкова накладна
+												.orders__info-value 31842684687
+											a.orders__button(href="file.pdf" target="_blank")
+												i.fa-solid.fa-download
+							.pagination
+								nav
+									ul
+										li
+											a.button.disabled(href="#") Перша
+										li
+											a.button.disabled(href="#") «
+										li
+											a.button.active(href="#") 1
+										li
+											a.button(href="#") 2
+										li
+											a.button(href="#") 3
+										li
+											a.button(href="#") »
+										li
+											a.button(href="#") Остання
+						#user-data.tab.cabinet__user-data.d-none
+							.cabinet__title-box
+								h3.cabinet__h3 Особисті дані
+							.data-edit__info
+								form.form-data-edit.form-identification-your-class(method="POST")
+									label.cart__label
+										.cart__info-text Ім'я:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="text" maxlength="50" name="name" required)
+										.cart__info-error Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text Прізвище:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="text" maxlength="50" name="lastname" required)
+										.cart__info-error Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text Телефон:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="tel" maxlength="50" name="phone" required)
+										.cart__info-error.show Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text E-mail:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="email" maxlength="100" name="email" required)
+										.cart__info-error Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text Місто:
+										input.input.cart__input(type="text" maxlength="50" name="city")
+										.cart__info-error Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text Адреса / № відділення:
+										input.input.cart__input(type="text" maxlength="200" name="address")
+										.cart__info-error Це поле заповнене невірно
+									.mt-4
+									label.cart__label
+										.cart__info-text Пароль:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="password" maxlength="200" name="password" required)
+										.cart__info-error Це поле заповнене невірно
+									label.cart__label
+										.cart__info-text Підтвердження пароля:
+											|
+											|
+											span.cart__info-required *
+										input.input.cart__input(type="password" maxlength="200" name="confirm" required)
+										.cart__info-error Це поле заповнене невірно
+									button.button.button_big.mt-4(type="submit") Змінити
+
+
+
