@@ -597,14 +597,11 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		&>ul
 			position: absolute
-			display: flex
+			display: none
 			flex-direction: column
-			top: 60px
 			padding: 0
 			margin-top: 47px
-			visibility: hidden
-			opacity: 0
-			transition-duration: 300ms
+			top: 17px
 			z-index: 1
 
 			&::before
@@ -619,6 +616,7 @@ button:hover, .button:hover, button:focus, .button:focus
 					display: none
 
 			@include media(1199)
+				display: flex
 				position: relative
 				visibility: visible
 				opacity: 1
@@ -627,16 +625,13 @@ button:hover, .button:hover, button:focus, .button:focus
 				top: 0
 
 		&>ul.show
-			visibility: visible
-			opacity: 1
-			transform: translateY(-43px)
+			display: flex
 
 
 			@include media(1199)
 				transform: none
 
 		&>ul>li
-			//position: relative
 			display: flex
 			min-width: 230px
 			transition-duration: 300ms
@@ -687,20 +682,18 @@ button:hover, .button:hover, button:focus, .button:focus
 
 		&>ul>li>ul
 			position: absolute
-			display: flex
+			display: none
 			flex-direction: column
 			top: 0
 			left: 100%
 			padding: 0
-			visibility: hidden
-			opacity: 0
-			//transition-duration: 100ms
 			height: 100%
 			background: rgba($white, .8)
 			border-radius: $br1
 
 			@include media(1199)
 				position: relative
+				display: flex
 				visibility: visible
 				opacity: 1
 				left: 0
@@ -711,8 +704,9 @@ button:hover, .button:hover, button:focus, .button:focus
 				border-radius: 0
 
 		&>ul>li>ul.show
-			visibility: visible
-			opacity: 1
+			display: flex
+			//visibility: visible
+			//opacity: 1
 
 		&>ul>li>ul>li
 			display: flex
