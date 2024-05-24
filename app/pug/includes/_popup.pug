@@ -72,8 +72,8 @@
 	.popup-content
 		.callback
 			form.form-ajax.form-identification-your-class(method="POST")
-				input(type="hidden" name="admin_email" value="creaslippers@gmail.com")
-				input(type="hidden" name="from_email" value="admin@site.com")
+				input(type="hidden" name="admin_email" value="recipient@gmail.com")
+				input(type="hidden" name="from_email" value="sender@site.com")
 				input(type="hidden" name="project_name" value="АвтоСітіДніпро")
 				input(type="hidden" name="form_subject" value="Запит зворотного дзвінка")
 				input(type="hidden" name="сool" value="Запит відправлено!")
@@ -84,3 +84,20 @@
 				input.callback__input(type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required)
 				input.callback__input(type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required)
 				button.callback__button.button_big Відправити
+
+#choose.d-none
+	.popup-content
+		.callback
+			form.form-ajax.form-identification-your-class(method="POST")
+				input(type="hidden" name="admin_email" value="recipient@gmail.com")
+				input(type="hidden" name="from_email" value="sender@site.com")
+				input(type="hidden" name="project_name" value="АвтоСітіДніпро")
+				input(type="hidden" name="form_subject" value="Запит підбору запчастин")
+				input(type="hidden" name="сool" value="Запит відправлено!")
+				input(type="hidden" name="сool_message" value="Наш менеджер зв'яжеться з Вами найближчим часом")
+				input(type="hidden" name="bad" value="Сталася помилка!")
+				input(type="hidden" name="bad_message" value="Сталася серверна помилка. Спробуйте пізніше або зв'яжіться з нами іншим способом. Приносимо свої вибачення.")
+				.callback__heading Індивідуальний підбір запчастин
+				input.callback__input(type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required)
+				input.callback__input(type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required)
+				button.callback__button.button_big Запросити

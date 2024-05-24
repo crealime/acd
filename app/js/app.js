@@ -4,10 +4,13 @@ window.addEventListener('load', function () {
 	const header = document.querySelector('.header')
 	const main = document.querySelector('.main')
 	const headerLiExpand = document.querySelector('.header__li-expand')
-	const headerUlLi = document.querySelectorAll('.header__catalog>ul>li')
 	const headerMenu = document.querySelector('.header__menu')
 	const headerMenuBox = document.querySelector('.header__menu-box')
 	const headerCatalog = document.querySelector('.header__catalog')
+	const headerCatalogButton = document.querySelector('.header__catalog>a')
+	const headerCatalogUl = document.querySelector('.header__catalog>ul')
+	const headerCatalogUlLi = document.querySelectorAll('.header__catalog>ul>li')
+	const headerCatalogUlLiUl = document.querySelectorAll('.header__catalog>ul>li>ul')
 	const headerCatalogArr = headerLiExpand.querySelector('.header__catalog i')
 	const headerBurger = document.querySelector('.header__burger')
 	const overlay = document.querySelector('.overlay')
@@ -62,6 +65,50 @@ window.addEventListener('load', function () {
 		expandMobileMenu()
 	})
 
+	// Show desktop menu
+	headerCatalogButton.addEventListener('click', ()=> {
+		headerCatalogUl.classList.toggle('show')
+	});
+
+	document.addEventListener('click', function(e) {
+		if (!headerCatalogUl.contains(e.target) && e.target !== headerCatalogButton) {
+			headerCatalogUl.classList.remove('show')
+		}
+	})
+
+	function removeClassFromAllUlLiUl() {
+		headerCatalogUlLiUl.forEach(ul => {
+			ul.classList.remove('show')
+		})
+	}
+
+	function addClassToUlLiUl(ul) {
+		removeClassFromAllUlLiUl()
+		ul.classList.add('show')
+	}
+
+	function debounce(func, wait) {
+		let timeout
+		return function(...args) {
+			const context = this
+			clearTimeout(timeout)
+			timeout = setTimeout(() => func.apply(context, args), wait)
+		}
+	}
+
+	const debouncedAddClass = debounce(function(ul,x) {
+		addClassToUlLiUl(ul)
+	}, 100)
+
+	headerCatalogUlLi.forEach(li => {
+		const ul = li.querySelector('ul')
+		if (ul) {
+			li.addEventListener('mousemove', (event) => {
+				debouncedAddClass(ul,event.clientX)
+			})
+		}
+	})
+
 	// Expand ul in mobile menu
 	headerLiExpand.addEventListener('click', ()=> {
 		headerCatalog.classList.toggle('header__li-expanded')
@@ -69,7 +116,7 @@ window.addEventListener('load', function () {
 	});
 
 	// Expand li in mobile menu
-	headerUlLi.forEach((li) => {
+	headerCatalogUlLi.forEach((li) => {
 		const link = li.querySelector('a')
 		const clone = headerLiExpand.cloneNode(true)
 		const arr = clone.querySelector('i')
