@@ -31,6 +31,8 @@ window.addEventListener('load', function () {
 	const tabs = document.querySelectorAll('.tab')
 	const ordersItem = document.querySelectorAll('.orders__item')
 	const ordersHeader = document.querySelectorAll('.orders__header')
+	const formsProd = document.querySelectorAll('.form-prod')
+	const hidePopupButton = document.querySelector('.hide-popup-button')
 
 
 	// Change main margin-top
@@ -139,7 +141,7 @@ window.addEventListener('load', function () {
 
 	function showPopup() {
 		popup.classList.remove('d-none')
-		if (popupContent.offsetHeight > popupBox.offsetHeight + 20) {
+		if (popupContent.offsetHeight > popupBox.offsetHeight + 40) {
 			popupBox.classList.add('popup__box_large-content')
 		}
 		setTimeout(() => {
@@ -148,6 +150,13 @@ window.addEventListener('load', function () {
 		setTimeout(() => {
 			html.style.overflowY = 'hidden'
 		}, 400)
+	}
+
+	function showPopupOnId(id) {
+		popupSource = document.getElementById(id)
+		popupContent = popupSource.querySelector('.popup-content')
+		popupBox.appendChild(popupContent)
+		showPopup()
 	}
 
 	function hidePopup() {
@@ -166,10 +175,7 @@ window.addEventListener('load', function () {
 		link.addEventListener('click', function(e) {
 			e.preventDefault()
 			const id = this.href.split('#').pop()
-			popupSource = document.getElementById(id)
-			popupContent = popupSource.querySelector('.popup-content')
-			popupBox.appendChild(popupContent)
-			showPopup()
+			showPopupOnId(id)
 		})
 	})
 
@@ -183,178 +189,15 @@ window.addEventListener('load', function () {
 		hidePopup()
 	})
 
+	hidePopupButton.addEventListener('click', function (){
+		hidePopup()
+	})
+
 	document.addEventListener('keydown', function(event) {
 		if (event.key === "Escape") {
 			hidePopup()
 		}
 	})
-
-	// Send Request
-
-	function sendRequest(method, url, body = null) {
-		const headers = {
-			'Content-type': 'application/json; charset=UTF-8'
-		}
-
-		return fetch(url, {
-			method,
-			body: JSON.stringify(body),
-			headers,
-		}).then(response => {
-			if (response.ok) {
-				return response.json()
-			}
-			return response.text().then(error => {
-				const e = new Error('Error!!!')
-				e.data = error
-				throw e
-			})
-		})
-	}
-
-	function resetAllForms() {
-		document.querySelectorAll('.popup__input').forEach(item => {
-			item.value = ''
-		})
-		document.querySelectorAll('.popup__textarea').forEach(item => {
-			item.value = ''
-		})
-	}
-
-	// Send form
-
-	function sendForm() {
-		formAjax.forEach(item => {
-			item.addEventListener('submit', function (e) {
-				e.preventDefault()
-				const that = this
-				const formDate = serialize(this)
-				const phpMail = 'mail.php'
-
-				sendRequest('POST', phpMail, formDate)
-					.then((response) => {
-						resetAllForms()
-						popup.forEach(item => {
-							hidePopup(item)
-						})
-						Swal.fire({
-							position: "center",
-							icon: "success",
-							title: formDate.сool,
-							text: formDate.сool_message,
-							backdrop: `
-rgba(0,0,0,0.9)`,
-							timer: 7000,
-							didOpen: () => html.style.overflowY = 'hidden',
-							didClose: () => html.style.overflowY = 'auto'
-						});
-
-						const action = that.querySelector('.popup').id
-
-						switch(action) {
-							case 'callback':
-								dataLayer.push({
-									'event': 'eEvent',
-									'eAction': 'Recall'
-								})
-								console.log('Recall')
-								break
-							case 'consult':
-								dataLayer.push({
-									'event': 'eEvent',
-									'eAction': 'Consultation'
-								})
-								console.log('Consultation')
-								break
-						}
-
-					})
-					.catch(err => {
-							console.log(err)
-							Swal.fire({
-								position: "center",
-								icon: "error",
-								title: formDate.bad,
-								text: formDate.bad_message,
-								backdrop: `
-rgba(0,0,0,0.9)`,
-								timer: 7000,
-								didOpen: () => html.style.overflowY = 'hidden',
-								didClose: () => html.style.overflowY = 'auto'
-							})
-						}
-					)
-			})
-		})
-	}
-	sendForm()
-
-	// Serialize
-
-	function serialize(form) {
-		if (!form || form.nodeName !== "FORM") {
-			return
-		}
-		let i, j,
-			obj = {}
-		for (i = 0; i < form.elements.length; i ++) {
-			if (form.elements[i].name === "") {
-				continue
-			}
-			switch (form.elements[i].nodeName) {
-				case 'INPUT':
-					switch (form.elements[i].type) {
-						case 'text':
-						case 'number':
-						case 'hidden':
-						case 'tel':
-						case 'password':
-						case 'button':
-						case 'reset':
-						case 'submit':
-						case 'range':
-							obj[form.elements[i].name] = form.elements[i].value
-							break
-						case 'checkbox':
-						case 'radio':
-							if (form.elements[i].checked) {
-								obj[form.elements[i].name] = form.elements[i].value
-							}
-							break
-						case 'file':
-							break
-					}
-					break
-				case 'TEXTAREA':
-					obj[form.elements[i].name] = form.elements[i].value
-					break
-				case 'SELECT':
-					switch (form.elements[i].type) {
-						case 'select-one':
-							obj[form.elements[i].name] = form.elements[i].value
-							break
-						case 'select-multiple':
-							for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) {
-								if (form.elements[i].options[j].selected) {
-									obj[form.elements[i].name] = form.elements[i].options[j].value
-								}
-							}
-							break
-					}
-					break
-				case 'BUTTON':
-					switch (form.elements[i].type) {
-						case 'reset':
-						case 'submit':
-						case 'button':
-							obj[form.elements[i].name] = form.elements[i].value
-							break
-					}
-					break
-			}
-		}
-		return obj
-	}
 
 	// Show warning
 
@@ -467,6 +310,188 @@ rgba(0,0,0,0.9)`,
 			})
 		})
 	}
+
+	// Send Request
+
+	function sendRequest(method, url, body = null) {
+		const headers = {
+			'Content-type': 'application/json; charset=UTF-8'
+		}
+
+		return fetch(url, {
+			method,
+			body: JSON.stringify(body),
+			headers,
+		}).then(response => {
+			if (response.ok) {
+				return response.json()
+			}
+			return response.text().then(error => {
+				const e = new Error('Error!!!')
+				e.data = error
+				throw e
+			})
+		})
+	}
+
+	// Serialize
+
+	function serialize(form) {
+		if (!form || form.nodeName !== "FORM") {
+			return
+		}
+		let i, j,
+			obj = {}
+		for (i = 0; i < form.elements.length; i ++) {
+			if (form.elements[i].name === "") {
+				continue
+			}
+			switch (form.elements[i].nodeName) {
+				case 'INPUT':
+					switch (form.elements[i].type) {
+						case 'text':
+						case 'number':
+						case 'hidden':
+						case 'tel':
+						case 'password':
+						case 'button':
+						case 'reset':
+						case 'submit':
+						case 'range':
+							obj[form.elements[i].name] = form.elements[i].value
+							break
+						case 'checkbox':
+						case 'radio':
+							if (form.elements[i].checked) {
+								obj[form.elements[i].name] = form.elements[i].value
+							}
+							break
+						case 'file':
+							break
+					}
+					break
+				case 'TEXTAREA':
+					obj[form.elements[i].name] = form.elements[i].value
+					break
+				case 'SELECT':
+					switch (form.elements[i].type) {
+						case 'select-one':
+							obj[form.elements[i].name] = form.elements[i].value
+							break
+						case 'select-multiple':
+							for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) {
+								if (form.elements[i].options[j].selected) {
+									obj[form.elements[i].name] = form.elements[i].options[j].value
+								}
+							}
+							break
+					}
+					break
+				case 'BUTTON':
+					switch (form.elements[i].type) {
+						case 'reset':
+						case 'submit':
+						case 'button':
+							obj[form.elements[i].name] = form.elements[i].value
+							break
+					}
+					break
+			}
+		}
+		return obj
+	}
+
+	// Reset all inputs in forms with class popup__input and popup__textarea
+
+	function resetAllForms() {
+		document.querySelectorAll('.popup__input').forEach(item => {
+			item.value = ''
+		})
+		document.querySelectorAll('.popup__textarea').forEach(item => {
+			item.value = ''
+		})
+	}
+
+	// Send form
+
+	function sendForm() {
+		formAjax.forEach(item => {
+			item.addEventListener('submit', function (e) {
+				e.preventDefault()
+				const that = this
+				const formDate = serialize(this)
+				const phpMail = 'mail.php'
+
+				sendRequest('POST', phpMail, formDate)
+					.then((response) => {
+						resetAllForms()
+						popup.forEach(item => {
+							hidePopup(item)
+						})
+						Swal.fire({
+							position: "center",
+							icon: "success",
+							title: formDate.сool,
+							text: formDate.сool_message,
+							backdrop: `
+rgba(0,0,0,0.9)`,
+							timer: 7000,
+							didOpen: () => html.style.overflowY = 'hidden',
+							didClose: () => html.style.overflowY = 'auto'
+						});
+
+						const action = that.querySelector('.popup').id
+
+						switch(action) {
+							case 'callback':
+								dataLayer.push({
+									'event': 'eEvent',
+									'eAction': 'Recall'
+								})
+								console.log('Recall')
+								break
+							case 'consult':
+								dataLayer.push({
+									'event': 'eEvent',
+									'eAction': 'Consultation'
+								})
+								console.log('Consultation')
+								break
+						}
+
+					})
+					.catch(err => {
+							console.log(err)
+							Swal.fire({
+								position: "center",
+								icon: "error",
+								title: formDate.bad,
+								text: formDate.bad_message,
+								backdrop: `
+rgba(0,0,0,0.9)`,
+								timer: 7000,
+								didOpen: () => html.style.overflowY = 'hidden',
+								didClose: () => html.style.overflowY = 'auto'
+							})
+						}
+					)
+			})
+		})
+	}
+	sendForm()
+
+
+
+
+	// Example of showing popup and ajax sending
+
+	formsProd.forEach(form => {
+		form.addEventListener('submit', event => {
+			event.preventDefault()
+
+			showPopupOnId('mini-cart')
+		})
+	})
 
 })
 

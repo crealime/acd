@@ -1,3 +1,11 @@
+.warning.d-none
+	.warning__back
+		.warning__text Взаємодіючи з сайтом, ви погоджуєтесь з <a class="warning__link popup-click" href="policy">політикою конфіденційності</a>.
+		.warning__close
+
+.scrollup.scrollup_hide.d-none
+	i.fa-solid.fa-circle-up
+
 .popup.d-none
 	.popup__close <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
 	.popup__box
@@ -9,54 +17,56 @@
 			.mini-cart__content
 				.cart__products
 					.cart__product
-						.cart__img
-							img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
-						.cart__product-info
-							.cart__product-title
-								a.cart__product-link(href="product.html") Кронштейн генератора Євро 2,3 для КамАЗ
-							.cart__product-article Код: 3231106010
-							.cart__product-cost 1300 грн
-						form.form-identification-your-class(method="POST")
-							.cart__controls
+						.cart__product-left
+							.cart__img
+								img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
+							.cart__product-info
+								.cart__product-title
+									a.cart__product-link(href="product.html") Кронштейн генератора Євро 2,3 для КамАЗ
+								.cart__product-article Код: 3231106010
+								.cart__product-cost 1300 грн
+						.cart__product-right
+							form.form-identification-your-class(method="POST")
+								.cart__controls
+									input(type="hidden" name="id" value="132")
+									.cart__increase
+										i.fa-solid.fa-angle-up
+									input.input.cart__count(type="number" name="count" value="1")
+									.cart__decrease
+										i.fa-solid.fa-angle-down
+							form.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="132")
-								.cart__increase
-									i.fa-solid.fa-angle-up
-								input.input.cart__count(type="number" name="count" value="1")
-								.cart__decrease
-									i.fa-solid.fa-angle-down
-						form.form-identification-your-class(method="POST")
-							input(type="hidden" name="id" value="132")
-							button.cart__delete(type="submit")
-								i.fa-solid.fa-xmark
+								button.cart__delete(type="submit")
+									i.fa-solid.fa-xmark
 					.cart__product
-						.cart__img
-							img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
-						.cart__product-info
-							.cart__product-title
-								a.cart__product-link(href="product.html") Кронштейн генератора Євро 2,3 для КамАЗ
-							.cart__product-article Код: 3231106010
-							.cart__product-cost 1300 грн
-						form.form-identification-your-class(method="POST")
-							.cart__controls
+						.cart__product-left
+							.cart__img
+								img(src="img/tmp/prod_1.jpeg" alt="" loading="lazy")
+							.cart__product-info
+								.cart__product-title
+									a.cart__product-link(href="product.html") Кронштейн генератора Євро 2,3 для КамАЗ
+								.cart__product-article Код: 3231106010
+								.cart__product-cost 1300 грн
+						.cart__product-right
+							form.form-identification-your-class(method="POST")
+								.cart__controls
+									input(type="hidden" name="id" value="132")
+									.cart__increase
+										i.fa-solid.fa-angle-up
+									input.input.cart__count(type="number" name="count" value="1")
+									.cart__decrease
+										i.fa-solid.fa-angle-down
+							form.form-identification-your-class(method="POST")
 								input(type="hidden" name="id" value="132")
-								.cart__increase
-									i.fa-solid.fa-angle-up
-								input.input.cart__count(type="number" name="count" value="1")
-								.cart__decrease
-									i.fa-solid.fa-angle-down
-						form.form-identification-your-class(method="POST")
-							input(type="hidden" name="id" value="132")
-							button.cart__delete(type="submit")
-								i.fa-solid.fa-xmark
+								button.cart__delete(type="submit")
+									i.fa-solid.fa-xmark
 			.mini-cart__footer
-				.mini-cart__total 1300
+				.mini-cart__total Разом 1300
 					|
 					|
 					span.mini-cart__currency грн
-				a.button.button_blue.button_big(href="#")
-				a.button.button_big(href="cart.html")
-
-
+				button.button.button_blue.mini-cart__button.hide-popup-button Продовжити покупки
+				a.button.mini-cart__button(href="cart.html") Оформити замовлення
 
 #callback.d-none
 	.popup-content
@@ -74,11 +84,3 @@
 				input.callback__input(type="text" name="Ім'я" maxlength="30" placeholder="Ваше ім'я" required)
 				input.callback__input(type="tel" name="Телефон" maxlength="30" placeholder="Ваш телефон" required)
 				button.callback__button.button_big Відправити
-
-.warning.d-none
-	.warning__back
-		.warning__text Взаємодіючи з сайтом, ви погоджуєтесь з <a class="warning__link popup-click" href="policy">політикою конфіденційності</a>.
-		.warning__close
-
-.scrollup.scrollup_hide.d-none
-	i.fa-solid.fa-circle-up
