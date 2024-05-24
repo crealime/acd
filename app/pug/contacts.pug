@@ -1,0 +1,46 @@
+extends includes/_template
+
+block title
+	| Контакти
+
+block main
+	main.main
+		.container
+			nav.breadcrumbs
+				ul
+					li
+						a(href="#") Головна
+					li Контакти
+		section.section.contacts
+			.container
+				h2.contacts__h2.text-center.ttu Контакти
+				.contacts__box
+					.contacts__block
+						.contacts__icon
+							i.fa-solid.fa-location-dot
+						.contacts__link
+							a(href="https://maps.app.goo.gl/m4xm4G2kBT5NWeCH6" target="_blank") Дніпро, пр. Богдана Хмельницького, 47
+					.contacts__block
+						.contacts__icon
+							i.fa-solid.fa-phone
+						.contacts__link
+							a(href="tel:0800331330") 0 (800) 33-13-30
+							.contacts__link-description Гаряча лінія
+					.contacts__block
+						.contacts__icon
+							i.fa-solid.fa-phone
+						.contacts__link
+							a(href="tel:+380506310130") +380 (50) 631-01-30
+							.contacts__link-description Антон
+					.contacts__block
+						.contacts__icon
+							i.fa-solid.fa-phone
+						.contacts__link
+							a(href="tel:+380988828177") +380 (98) 882-81-77
+					.contacts__block
+						.contacts__icon
+							i.fa-solid.fa-envelope
+						.contacts__link
+							a(href="mailto:as@autocity.biz.ua") as@autocity.biz.ua
+
+
