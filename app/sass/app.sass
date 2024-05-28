@@ -1212,6 +1212,11 @@ button:hover, .button:hover, button:focus, .button:focus
 	&__link
 		margin-top: rem(40)
 
+.grid-2
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr))
+	gap: 20px
+
 .grid-3
 	display: grid
 	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr))
@@ -2285,10 +2290,17 @@ button:hover, .button:hover, button:focus, .button:focus
 		font-weight: 700
 
 .contacts
-	margin: rem(40) 0 rem(60)
+	margin: rem(40) 0
 
 	&__box
-		text-align: center
+		margin-top: 40px
+
+	&__right
+
+		iframe
+			width: 100%
+			height: calc(100% - 30px)
+			min-height: 500px
 
 	&__block
 		margin-bottom: 30px
