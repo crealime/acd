@@ -69,6 +69,7 @@ window.addEventListener('load', function () {
 	headerCatalogButton.addEventListener('click', ()=> {
 		if (headerCatalogUl.classList.contains('show')) {
 			headerCatalogUl.classList.remove('show')
+			removeClassFromAllUlLiUl()
 		}
 		else {
 			headerCatalogUl.classList.add('show')
@@ -79,6 +80,7 @@ window.addEventListener('load', function () {
 	document.addEventListener('click', function(e) {
 		if (!headerCatalogUl.contains(e.target) && e.target !== headerCatalogButton) {
 			headerCatalogUl.classList.remove('show')
+			removeClassFromAllUlLiUl()
 		}
 	})
 
